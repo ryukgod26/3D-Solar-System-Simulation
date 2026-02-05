@@ -14,7 +14,6 @@ const char *fragmentShaderSource = "#version 330 core\n"
 				"FragColor = vec4(1.0f,0.5f,0.6f,1.0f);\n;\n"
 				"}\0";
 
-
 int main() {
 	if (!glfwInit()){
 		std::cout<<"Failed to Intialize GLFW"<<std::endl;
