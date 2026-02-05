@@ -10,6 +10,15 @@ A basic OpenGL application for simulating the solar system in 3D.
 - GLFW3
 - GLEW
 
+## Screenshots
+
+### Triangle
+![Triangle](Images/triangle.png)
+
+### Cube
+
+![Cube](Images/cube.png)
+
 ## Building on Windows
 
 ### Using vcpkg (Recommended)
