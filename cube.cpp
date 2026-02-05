@@ -84,7 +84,32 @@ int main() {
 		1.0f,-1.0f,1.0f,
 	};
 	
+	GLuint vertexBuffer;
 
-	unsigned int VBA,VBO;
+	glGenBuffers(1,&vertexBuffer);
+	glEnableVertexAttribArray(0);
+
+	unsigned int VBA,VAO;
+	glGenVertexArrays(1,&VAO);
+	glGenBuffers(1,&VBO);
+
+	glBindVertexArray(VAO);
+
+	glBindBuffer(GL_ARRAY_BUFFER,VBO);
+	glBufferData(GL_ARRAY_BUFFER,sizeof(vertices),
+
+
+
+
+
+
+
+	glDeleteVertexArrays(1,&VAO);
+	glDeleteBuffers(1,&VBO);
+	glDeleteProgram(shaderProgram);
+	glfwTerminate();
+
+	return 0;
+
 
 }
