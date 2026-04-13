@@ -39,3 +39,9 @@ Game::Game(int width,int height, const std::string title, GLFWmonitor *monitor,G
 			});
 
 }
+
+Game::~Game noexcept
+{
+	window.reset();
+	glfwTerminate();
+}
