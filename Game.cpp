@@ -1,7 +1,7 @@
 #include "Game.h"
 #include <glad/glad.h>
-#include <glfw3.h>
-#include <iostrean>
+#include <GLFW/glfw3.h>
+#include <iostream>
 
 Game::Game(int width,int height, const std::string title, GLFWmonitor *monitor,GLFWwindow* share) : window(nullptr,[](GLFWwindow* window){ 
 	glfwDestroyWindow(window);
