@@ -3,7 +3,7 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 
-Game::Game(int width,int height, const std::string title, GLFWmonitor *monitor,GLFWwindow* share) : window(nullptr,[](GLFWwindow* window){ 
+Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int viewportWidth, int viewportHeight,  const std::string title, GLFWmonitor *monitor,GLFWwindow* share) : window(nullptr,[](GLFWwindow* window){ 
 	glfwDestroyWindow(window);
 })
 {
@@ -16,7 +16,7 @@ Game::Game(int width,int height, const std::string title, GLFWmonitor *monitor,G
 		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT,GL_TRUE);
 	#endif
 	
-	window.reset(glfwCreateWindow(width,height,title.c_str(),monitor,share));
+	window.reset(glfwCreateWindow(windowWidth,windowHeight,title.c_str(),monitor,share));
 
 	if(window == nullptr){
 		std::cout<<"Failed to Intialize GLFW.\n";
@@ -31,7 +31,7 @@ Game::Game(int width,int height, const std::string title, GLFWmonitor *monitor,G
 		exit(EXIT_FAILURE);
 	}
 
-	glViewport(0,0,800,600);
+	glViewport(viewportX,viewportY,viewportWidth,viewportHeight);
 	glClearColor(.2f,.3f,.5f,1.0f);
 	glfwSetFramebufferSizeCallback(window.get(),
 			[](GLFWwindow* window,int width,int height){
@@ -40,8 +40,33 @@ Game::Game(int width,int height, const std::string title, GLFWmonitor *monitor,G
 
 }
 
-Game::~Game noexcept
+Game::~Game() noexcept
 {
 	window.reset();
 	glfwTerminate();
 }
+
+void Game::Tick()
+{
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	Update();
+	Draw();
+	glfwSwapBuffers(window.get());
+	glfwPollEvents();
+}
+
+bool Game::ShouldClose() const
+{
+	return glfwWindowShouldClose(window.get());
+}
+
+void Game::Update()
+{
+
+}
+
+void Game::Draw()
+{
+
+}
+
