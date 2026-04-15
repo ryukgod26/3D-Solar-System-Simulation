@@ -1,13 +1,10 @@
 #pragma once
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-#include <memory>
-#include <functional>
 #include <string>
+#include "Window.h"
 
 class Game{
 	public:
-		Game(int windowWidth, int windowHeight,int viewportX, int viewportY, int viewportWidth, int viewportHeight,const std::string title ,GLFWmonitor *monitor=nullptr,GLFWwindow *share=nullptr);
+		Game(int windowWidth, int windowHeight,int viewportX, int viewportY, int viewportWidth, int viewportHeight,const std::string title ,struct GLFWmonitor *monitor=nullptr,struct GLFWwindow *share=nullptr);
 		Game(const Game& other) = delete;
 		Game& operator=(const Game& other) = delete;
 		~Game() noexcept;
@@ -17,5 +14,5 @@ class Game{
 	private:
 		void Update();
 		void Draw();
-		std::unique_ptr<GLFWwindow, std::function<void(GLFWwindow*)>> window;
+		Window window;
 };

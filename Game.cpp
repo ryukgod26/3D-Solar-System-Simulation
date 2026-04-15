@@ -3,41 +3,9 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 
-Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int viewportWidth, int viewportHeight,  const std::string title, GLFWmonitor *monitor,GLFWwindow* share) : window(nullptr,[](GLFWwindow* window){ 
-	glfwDestroyWindow(window);
-})
+Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int viewportWidth, int viewportHeight,  const std::string title, GLFWmonitor *monitor,GLFWwindow* share) : 
+	window(windowWidth,windowHeight,viewportX,viewportY,viewportWidth,viewportHeight,title,monitor,share)
 {
-	glfwInit();
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR,3);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR,3);
-	glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
-
-	#ifdef __APPLE__
-		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT,GL_TRUE);
-	#endif
-	
-	window.reset(glfwCreateWindow(windowWidth,windowHeight,title.c_str(),monitor,share));
-
-	if(window == nullptr){
-		std::cout<<"Failed to Intialize GLFW.\n";
-		glfwTerminate();
-		exit(EXIT_FAILURE);
-	}
-
-	glfwMakeContextCurrent(window.get());
-	
-	if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
-		std::cout<<"Failed to Intialize GLAD\n";
-		exit(EXIT_FAILURE);
-	}
-
-	glViewport(viewportX,viewportY,viewportWidth,viewportHeight);
-	glClearColor(.2f,.3f,.5f,1.0f);
-	glfwSetFramebufferSizeCallback(window.get(),
-			[](GLFWwindow* window,int width,int height){
-			glViewport(0,0,width,height);
-			});
-
 }
 
 Game::~Game() noexcept
@@ -51,13 +19,13 @@ void Game::Tick()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	Update();
 	Draw();
-	glfwSwapBuffers(window.get());
+	window.SwapBuffers();
 	glfwPollEvents();
 }
 
 bool Game::ShouldClose() const
 {
-	return glfwWindowShouldClose(window.get());
+	return window.ShouldClose();
 }
 
 void Game::Update()
