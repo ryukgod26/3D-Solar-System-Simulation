@@ -8,12 +8,6 @@ Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int vie
 {
 }
 
-Game::~Game() noexcept
-{
-	window.reset();
-	glfwTerminate();
-}
-
 void Game::Tick()
 {
 	window.ClearBuffers();

@@ -8,7 +8,7 @@ class Game{
 		Game(int windowWidth, int windowHeight,int viewportX, int viewportY, int viewportWidth, int viewportHeight,const std::string title ,struct GLFWmonitor *monitor=nullptr,struct GLFWwindow *share=nullptr);
 		Game(const Game& other) = delete;
 		Game& operator=(const Game& other) = delete;
-		~Game() noexcept;
+//		~Game() noexcept;
 		void Tick();
 		bool ShouldClose() const;
 	
@@ -16,4 +16,5 @@ class Game{
 		void Update();
 		void Draw();
 		Window window;
+		ShaderProgram shaderProgram;
 };

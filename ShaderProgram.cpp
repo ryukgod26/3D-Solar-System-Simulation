@@ -5,7 +5,7 @@
 #include <sstream>
 #include <iostream>
 
-ShaderProgran::ShaderProgram(const char* vertexShaderPath,const char* fragmentShaderPath){
+ShaderProgram::ShaderProgram(const char* vertexShaderPath,const char* fragmentShaderPath){
 	std::string vertexCode;
 	std::string fragmentCode;
 	std::ifstream vertexShaderFile;
@@ -21,8 +21,8 @@ ShaderProgran::ShaderProgram(const char* vertexShaderPath,const char* fragmentSh
 	vShaderStream << vertexShaderFile.rdbuf();
 	fShaderStream << fragmentShaderFile.rdbuf();
 
-	vShaderFile.close();
-	fShaderFile.close();
+	vertexShaderFile.close();
+	fragmentShaderFile.close();
 
 	vertexCode = vShaderStream.str();
 	fragmentCode = fShaderStream.str();
@@ -50,7 +50,7 @@ ShaderProgran::ShaderProgram(const char* vertexShaderPath,const char* fragmentSh
 	glGetShaderiv(fragment, GL_COMPILE_STATUS, &success);
 
 	if (!success){
-		glGetShadsrInfoLog(fragment,512,NULL,infoLog);
+		glGetShaderInfoLog(fragment,512,NULL,infoLog);
 		std::cout << "Error: Fragment Shader Compilation Failed\n"<< std::endl;
 	}
 
@@ -77,6 +77,6 @@ void ShaderProgram::Use() const{
 	glUseProgram(shaderProgramID);
 }
 
-void ShaderProgram::GetID() const{
+unsigned int ShaderProgram::GetID() const{
 	return shaderProgramID;
 }

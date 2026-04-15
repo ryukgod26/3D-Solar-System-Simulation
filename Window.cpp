@@ -1,9 +1,9 @@
 #include "Window.h"
 #include <glad/glad.h>
-#include <glfw/glfw3.h>
+#include <GLFW/glfw3.h>
 #include <iostream>
 
-Window::Window(int windowWidyh, int windowHeight, int viewportX,int viewportY, int viewportWidth, int viewportHeight, const std::string title, GLFWmonitor* monitor, GLFWwindow* share)
+Window::Window(int windowWidth, int windowHeight, int viewportX,int viewportY, int viewportWidth, int viewportHeight, const std::string title, GLFWmonitor* monitor, GLFWwindow* share)
 :
 window(nullptr,[](GLFWwindow* window){glfwDestroyWindow(window);}){
 

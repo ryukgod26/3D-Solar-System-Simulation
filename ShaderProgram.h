@@ -3,12 +3,12 @@
 
 class ShaderProgram{
 	public:
-		ShaderProgram(const cbar* vertexShaderPath,const char* fragmentShaderPath);
-		ShaderProgran(const shaderProgram& other); = delete;
-		ShaderProgram& operator=(const shaderProgram& other) = delete;
-		~ShaderProgran() noexcept;
+		ShaderProgram(const char* vertexShaderPath,const char* fragmentShaderPath);
+		ShaderProgram(const ShaderProgram& other) = delete;
+		ShaderProgram& operator=(const ShaderProgram& other) = delete;
+		~ShaderProgram() noexcept;
 		void Use() const;
 		unsigned int GetID() const;
 	private:
 		unsigned int shaderProgramID;
-}
+};
