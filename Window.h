@@ -11,6 +11,7 @@ class Window{
 		~Window() noexcept;
 		void SwapBuffers() const;
 		bool ShouldClose() const;
+		void ClearBuffers() const;
 	private:
 		std::unique_ptr<GLFWwindow, std::function<void(GLFWwindow*)>> window;
 
