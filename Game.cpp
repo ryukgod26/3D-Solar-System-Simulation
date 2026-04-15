@@ -4,7 +4,7 @@
 #include <iostream>
 
 Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int viewportWidth, int viewportHeight,  const std::string title, GLFWmonitor *monitor,GLFWwindow* share) : 
-	window(windowWidth,windowHeight,viewportX,viewportY,viewportWidth,viewportHeight,title,monitor,share)
+	window(windowWidth,windowHeight,viewportX,viewportY,viewportWidth,viewportHeight,title,monitor,share),shaderProgram("ResFiles/Shaders/VertexShader.vert","ResFiles/Shaders/FragmentShader.frag")
 {
 }
 
@@ -35,6 +35,6 @@ void Game::Update()
 
 void Game::Draw()
 {
-
+	shaderProgram.Use();
 }
 

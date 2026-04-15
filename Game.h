@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "Window.h"
+#include "ShaderProgram.h"
 
 class Game{
 	public:
