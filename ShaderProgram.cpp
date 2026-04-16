@@ -4,8 +4,9 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <stdexcept>
 
-ShaderProgram::ShaderProgram(const char* vertexShaderPath,const char* fragmentShaderPath){
+ShaderProgram::ShaderProgram(const std::string& vertexShaderPath,const std::string& fragmentShaderPath){
 	std::string vertexCode;
 	std::string fragmentCode;
 	std::ifstream vertexShaderFile;
@@ -14,18 +15,26 @@ ShaderProgram::ShaderProgram(const char* vertexShaderPath,const char* fragmentSh
 	vertexShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
 	fragmentShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
 
-	vertexShaderFile.open(vertexShaderPath);
-	fragmentShaderFile.open(fragmentShaderPath);
-	std::stringstream vShaderStream, fShaderStream;
-	
-	vShaderStream << vertexShaderFile.rdbuf();
-	fShaderStream << fragmentShaderFile.rdbuf();
+	try{
+		vertexShaderFile.open(vertexShaderPath);
+		fragmentShaderFile.open(fragmentShaderPath);
+		std::stringstream vShaderStream, fShaderStream;
 
-	vertexShaderFile.close();
-	fragmentShaderFile.close();
+		vShaderStream << vertexShaderFile.rdbuf();
+		fShaderStream << fragmentShaderFile.rdbuf();
 
-	vertexCode = vShaderStream.str();
-	fragmentCode = fShaderStream.str();
+		vertexShaderFile.close();
+		fragmentShaderFile.close();
+
+		vertexCode = vShaderStream.str();
+		fragmentCode = fShaderStream.str();
+	}
+	catch (const std::exception&){
+		throw std::runtime_error(
+			"Failed to read shader files. Vertex: " + vertexShaderPath + " Fragment: " + fragmentShaderPath
+		);
+	}
+
 
 	const char* vShaderCode = vertexCode.c_str();
 	const char* fShaderCode = fragmentCode.c_str();
@@ -41,7 +50,7 @@ ShaderProgram::ShaderProgram(const char* vertexShaderPath,const char* fragmentSh
 
 	if (!success){
 		glGetShaderInfoLog(vertex,512,NULL,infoLog);
-		std::cout<<"ERROR: Vertex Shader Compilation Failed\n" << infoLog << std::endl;
+		throw std::runtime_error(std::string("Vertex shader compilation failed: ") + infoLog);
 	}
 
 	fragment = glCreateShader(GL_FRAGMENT_SHADER);
@@ -51,7 +60,7 @@ ShaderProgram::ShaderProgram(const char* vertexShaderPath,const char* fragmentSh
 
 	if (!success){
 		glGetShaderInfoLog(fragment,512,NULL,infoLog);
-		std::cout << "Error: Fragment Shader Compilation Failed\n"<< std::endl;
+		throw std::runtime_error(std::string("Fragment shader compilation failed: ") + infoLog);
 	}
 
 	shaderProgramID = glCreateProgram();
@@ -63,7 +72,7 @@ ShaderProgram::ShaderProgram(const char* vertexShaderPath,const char* fragmentSh
 
 	if (!success){
 		glGetProgramInfoLog(shaderProgramID,512,NULL,infoLog);
-		std::cout<<"Error Shader Program Linking Failed"<<std::endl;
+		throw std::runtime_error(std::string("Shader program linking failed: ") + infoLog);
 	}
 	glDeleteShader(vertex);
 	glDeleteShader(fragment);

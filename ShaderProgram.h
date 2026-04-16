@@ -1,9 +1,11 @@
 #pragma once
 
+#include <string>
+
 
 class ShaderProgram{
 	public:
-		ShaderProgram(const char* vertexShaderPath,const char* fragmentShaderPath);
+		ShaderProgram(const std::string& vertexShaderPath,const std::string& fragmentShaderPath);
 		ShaderProgram(const ShaderProgram& other) = delete;
 		ShaderProgram& operator=(const ShaderProgram& other) = delete;
 		~ShaderProgram() noexcept;
