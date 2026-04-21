@@ -2,6 +2,7 @@
 #include <string>
 #include "Window.h"
 #include "ShaderProgram.h"
+#include <glm/glm.hpp>
 
 class Game{
 	public:
@@ -17,4 +18,7 @@ class Game{
 		void Draw();
 		Window window;
 		ShaderProgram shaderProgram;
+		std::vector<glm::vec3> vertexPositions;
+		std::vector<glm::vec2> textureCoordinates;
+		std::vector<glm::vec3> normals;
 };
