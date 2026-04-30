@@ -12,7 +12,7 @@
 Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int viewportWidth, int viewportHeight,  const std::string title, GLFWmonitor *monitor,GLFWwindow* share) : 
 	window(windowWidth,windowHeight,viewportX,viewportY,viewportWidth,viewportHeight,title,monitor,share),shaderProgram(std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/VertexShader.vert",std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/FragmentShader.frag")
 {
-	std::string objPath = std::string(PROJECT_ROOT_DIR) + "/cube.obj";
+	std::string objPath = std::string(PROJECT_ROOT_DIR) + "/monkey.obj";
 	if (!loadOBJ(objPath.c_str(),vertexPositions,textureCoordinates,normals)){
 		throw std::runtime_error("Failed to load OBJ file: " + objPath);
 	}

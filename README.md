@@ -51,6 +51,14 @@ cmake ..
 make
 ```
 
+OR 
+
+```bash
+sudo apt-get install libglfw3-dev libglew-dev
+
+g++ main.cpp Game.cpp Window.cpp ShaderProgram.cpp objload.cpp glad.c -o my_engine -I ./include -lglfw -lGL -ldl
+./my-engine
+````
 ## Running
 
 ```bash
