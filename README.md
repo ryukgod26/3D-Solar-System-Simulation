@@ -19,19 +19,6 @@ A basic OpenGL application for simulating the solar system in 3D.
 
 ![Cube](Images/cube.png)
 
-## Building on Windows
-
-### Using vcpkg (Recommended)
-```bash
-# Install dependencies
-vcpkg install glfw3 glew
-
-# Build
-mkdir build
-cd build
-cmake .. -DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake
-cmake --build .
-```
 
 ### Manual Installation
 1. Download and install GLFW from https://www.glfw.org/

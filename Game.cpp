@@ -11,7 +11,8 @@
 #endif
 
 Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int viewportWidth, int viewportHeight,  const std::string title, GLFWmonitor *monitor,GLFWwindow* share) : 
-	window(windowWidth,windowHeight,viewportX,viewportY,viewportWidth,viewportHeight,title,monitor,share),shaderProgram(std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/VertexShader.vert",std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/FragmentShader.frag"), objActor("monkey.obj")
+	window(windowWidth,windowHeight,viewportX,viewportY,viewportWidth,viewportHeight,title,monitor,share),shaderProgram(std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/VertexShader.vert",std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/FragmentShader.frag"), 
+	objActor("monkey.obj"), objActor2("cube.obj")
 {
 
 	/*
@@ -59,19 +60,35 @@ bool Game::ShouldClose() const
 
 void Game::Update()
 {
-	Model = glm::mat4(1.0f);
-	Model = glm::translate(Model,glm::vec3(0.0f,0.0f,0.0f));
-	Model = glm::scale(Model,glm::vec3(0.5f,0.5f,0.5f));
-	Model = glm::rotate(Model,glm::radians(150.0f),glm::vec3(0.0f,1.0f,0.0f));
-	Model = glm::rotate(Model,glm::radians(0.0f),glm::vec3(1.0f,0.0f,0.0f));
-	unsigned int matrixID = glGetUniformLocation(shaderProgram.GetID(),"Model");
-	glUniformMatrix4fv(matrixID,1,GL_FALSE,&Model[0][0]);
+	// Model = glm::mat4(1.0f);
+	// Model = glm::translate(Model,glm::vec3(0.0f,0.0f,0.0f));
+	// Model = glm::scale(Model,glm::vec3(0.5f,0.5f,0.5f));
+	// Model = glm::rotate(Model,glm::radians(150.0f),glm::vec3(0.0f,1.0f,0.0f));
+	// Model = glm::rotate(Model,glm::radians(0.0f),glm::vec3(1.0f,0.0f,0.0f));
+	// unsigned int matrixID = glGetUniformLocation(shaderProgram.GetID(),"Model");
+	// glUniformMatrix4fv(matrixID,1,GL_FALSE,&Model[0][0]);
+
+	Model1 = glm::mat4(1.0f);
+	Model1 = glm::translate(Model1, glm::vec3(.0f,.0f,.0f));
+	Model1 = glm::scale(Model1, glm::vec3(.5f,.5f,.5f));
+	Model1 = glm::rotate(Model1, glm::radians(150.0f), glm::vec3(.0f,1.0f,.0f));
+
+	Model2 = glm::mat4(1.0f);
+	Model2 = glm::translate(Model2, glm::vec3(.0f,.0f,.0f));
+	Model2 = glm::scale(Model2, glm::vec3(.5f,.5f,.5f));
+	Model2 = glm::rotate(Model2, glm::radians(150.0f), glm::vec3(.0f,1.0f,.0f));
 }
 
 void Game::Draw()
 {
+	unsigned int matrixID = glGetUniformLocation(shaderProgram.GetID(), "Model");
+
 	window.UseShader(shaderProgram);
+	glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
 	window.DrawActor(objActor);
+	glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
+	window.DrawActor(objActor2);
+
 	/*
 	glBindVertexArray(VAO);
 	glDrawArrays(GL_TRIANGLES,0,vertexPositions.size());

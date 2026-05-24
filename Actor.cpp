@@ -15,24 +15,24 @@ Actor::Actor(const char* objectPath){
 	assert(vertexCount >= 3);
 
 	glGenVertexArrays(1, & VAO);
-	glBindVertexArrays(VAO);
+	glBindVertexArray(VAO);
 
-	glGenBuffer(1,&VBOVertex);
+	glGenBuffers(1,&VBOVertex);
 	glBindBuffer(GL_ARRAY_BUFFER, VBOVertex);
 	glBufferData(GL_ARRAY_BUFFER, vertexPositions.size() * sizeof(glm::vec3), vertexPositions.data(), GL_STATIC_DRAW);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), 0);
 	glEnableVertexAttribArray(0);
 
-	glGenBuffer(1, &VBOTexture);
+	glGenBuffers(1, &VBOTexture);
 	glBindBuffer(GL_ARRAY_BUFFER, VBOTexture);
 glBufferData(GL_ARRAY_BUFFER, textureCoordinates.size() * sizeof(glm::vec2), textureCoordinates.data(), GL_STATIC_DRAW);
-	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(GLFloat), 0);
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(GLfloat), 0);
 	glEnableVertexAttribArray(1);
 
-	glGenBuffer(1,&VBONormals);
+	glGenBuffers(1,&VBONormals);
 	glBindBuffer(GL_ARRAY_BUFFER, VBONormals);
 	glBufferData(GL_ARRAY_BUFFER, normals.size() * sizeof(glm::vec3), normals.data(), GL_STATIC_DRAW);
-	glVertexAttribPointer(2,3,GL_FLOAT, GL_FALSE, 3 * sizeof(GLFloat),0);
+	glVertexAttribPointer(2,3,GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat),0);
 	glEnableVertexAttribArray(2);
 }
 
