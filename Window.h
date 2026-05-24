@@ -2,6 +2,8 @@
 #include <string>
 #include <memory>
 #include <functional>
+#include "Actor.h"
+#include "ShaderProgram.h"
 
 class Window{
 	public:
@@ -9,9 +11,14 @@ class Window{
 		Window(const Window& other) = delete;
 		Window& operator=(const Window& other) = delete;
 		~Window() noexcept;
-		void SwapBuffers() const;
+
+		void UseShader(const ShaderProgram& shaderProgram);
+		void DrawActor(const Actor& actor);
+		void DrawActor(const Actor& actor, const ShaderProgram& shaderProgram);
+
+		void SwapBuffers();
 		bool ShouldClose() const;
-		void ClearBuffers() const;
+		void ClearBuffers();
 	private:
 		std::unique_ptr<GLFWwindow, std::function<void(GLFWwindow*)>> window;
 

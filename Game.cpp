@@ -70,8 +70,8 @@ void Game::Update()
 
 void Game::Draw()
 {
-	shaderProgram.Use();
-	objActor.Draw();
+	window.UseShader(shaderProgram);
+	window.DrawActor(objActor);
 	/*
 	glBindVertexArray(VAO);
 	glDrawArrays(GL_TRIANGLES,0,vertexPositions.size());

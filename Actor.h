@@ -7,7 +7,8 @@ class Actor{
 		Actor(const Actor& other) = delete;
 		Actor& operator=(const Actor& other) = delete;
 		virtual ~Actor() noexcept;
-		void Draw() const;
+		unsigned int GetVAO() const;
+		unsigned int GetVertexCount() const;
 	private:
 		unsigned int vertexCount;
 
