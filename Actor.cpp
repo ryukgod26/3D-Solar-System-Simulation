@@ -36,6 +36,13 @@ glBufferData(GL_ARRAY_BUFFER, textureCoordinates.size() * sizeof(glm::vec2), tex
 	glEnableVertexAttribArray(2);
 }
 
+Actor::~Actor() noexcept {
+	glDeleteVertexArrays(1, &VAO);
+	glDeleteBuffers(1, &VBOVertex);
+	glDeleteBuffers(1, &VBOTexture);
+	glDeleteBuffers(1, &VBONormals);
+}
+
 void Actor::Draw() const {
 	glBindVertexArray(VAO);
 	glDrawArrays(GL_TRIANGLES, 0, vertexCount);

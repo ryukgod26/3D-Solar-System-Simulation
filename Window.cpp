@@ -31,6 +31,8 @@ window(nullptr,[](GLFWwindow* window){glfwDestroyWindow(window);}){
 
 	glViewport(viewportX,viewportY,viewportWidth,viewportHeight);
 	glClearColor(0.2f,0.3f,0.4f,1.0f);
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LESS);
 	glfwSetFramebufferSizeCallback(window.get(),[](GLFWwindow* window,int width, int height){glViewport(0,0,width,height);});
 
 }

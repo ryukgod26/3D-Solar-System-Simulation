@@ -37,8 +37,8 @@ Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int vie
 	glBindVertexArray(0);
 	*/
 
-	glEnable(GL_DEPTH_TEST);
-	glDepthFunc(GL_LESS);
+/*	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LESS);*/
 	
 
 }
