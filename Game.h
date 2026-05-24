@@ -1,9 +1,10 @@
 #pragma once
 #include <string>
 #include "Window.h"
+#include "Actor.h"
 #include "ShaderProgram.h"
 #include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
+//#include <glm/gtc/matrix_transform.hpp>
 
 class Game{
 	public:
@@ -19,6 +20,7 @@ class Game{
 		void Draw();
 		Window window;
 		ShaderProgram shaderProgram;
+		/*
 		std::vector<glm::vec3> vertexPositions;
 		std::vector<glm::vec2> textureCoordinates;
 		std::vector<glm::vec3> normals;
@@ -26,6 +28,9 @@ class Game{
 		unsigned int VAO;
 		unsigned int VBO;
 		unsigned int VBOColor;
+		*/
+
+		Actor objActor;
 
 		glm::mat4 Model;
 

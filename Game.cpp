@@ -4,14 +4,17 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include <string>
+#include <glm/gtc/matrix_transform.hpp>
 
 #ifndef PROJECT_ROOT_DIR
 #define PROJECT_ROOT_DIR "."
 #endif
 
 Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int viewportWidth, int viewportHeight,  const std::string title, GLFWmonitor *monitor,GLFWwindow* share) : 
-	window(windowWidth,windowHeight,viewportX,viewportY,viewportWidth,viewportHeight,title,monitor,share),shaderProgram(std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/VertexShader.vert",std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/FragmentShader.frag")
+	window(windowWidth,windowHeight,viewportX,viewportY,viewportWidth,viewportHeight,title,monitor,share),shaderProgram(std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/VertexShader.vert",std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/FragmentShader.frag"), objActor("monkey.obj")
 {
+
+	/*
 	std::string objPath = std::string(PROJECT_ROOT_DIR) + "/monkey.obj";
 	if (!loadOBJ(objPath.c_str(),vertexPositions,textureCoordinates,normals)){
 		throw std::runtime_error("Failed to load OBJ file: " + objPath);
@@ -32,6 +35,7 @@ Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int vie
 	glEnableVertexAttribArray(1);
 	glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,sizeof(GLfloat) * 3, (void*)0 );
 	glBindVertexArray(0);
+	*/
 
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
@@ -67,7 +71,10 @@ void Game::Update()
 void Game::Draw()
 {
 	shaderProgram.Use();
+	objActor.Draw();
+	/*
 	glBindVertexArray(VAO);
 	glDrawArrays(GL_TRIANGLES,0,vertexPositions.size());
+	*/
 }
 
