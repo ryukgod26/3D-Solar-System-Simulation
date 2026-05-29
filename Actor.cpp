@@ -4,6 +4,7 @@
 #include <glad/glad.h>
 #include <glfw3.h>
 #include <assert.h>
+#include <glm/gtc/matrix_transform.hpp>
 
 Actor::Actor(const char* objectPath){
 	std::vector<glm::vec3> vertexPositions;
@@ -49,4 +50,24 @@ unsigned int Actor::GetVAO() const {
 
 unsigned int Actor::GetVertexCount() const{
 	return vertexCount;
+}
+
+void Actor::ResetModelMatrix(){
+	modelMatrix = glm::mat4(1.0f);
+}
+
+void Actor::ApplyTranslation(glm::vec3 translation) {
+	modelMatrix = glm::translate(modelMatrix,translation);
+}
+
+void Actor::ApplyScale(glm::vec3 scale) {
+	modelMatrix = glm::scale(modelMatrix,scale);
+}
+
+void Actor::ApplyRotation(float degrees, glm::vec3 axis){
+	modelMatrix = glm::rotate(modelMatrix,glm::radians(degrees),axis);
+}
+
+const glm::mat4& Actor::GetModelMatrix() const{
+	return modelMatrix;
 }

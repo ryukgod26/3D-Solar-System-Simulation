@@ -1,5 +1,6 @@
 #pragma once
 #include<vector>
+#include <glm/glm.hpp>
 
 class Actor{
 	public:
@@ -9,6 +10,12 @@ class Actor{
 		virtual ~Actor() noexcept;
 		unsigned int GetVAO() const;
 		unsigned int GetVertexCount() const;
+
+		void ResetModelMatrix();
+		void ApplyTranslation(glm::vec3 translation);
+		void ApplyScale(glm::vec3 scale);
+		void ApplyRotation(float degrees, glm::vec3 axis);
+		const glm::mat4& GetModelMatrix const;
 	private:
 		unsigned int vertexCount;
 
