@@ -33,8 +33,6 @@ class Game{
 		Actor objActor;
 		Actor objActor2;
 
-		glm::mat4 Model1;
-		glm::mat4 Model2;
 /*
 		//camera
 		glm::vec3 camPos = glm::vec3(0.0f,0.0f,3.0f);

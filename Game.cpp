@@ -1,10 +1,8 @@
 #include "Game.h"
-#include "objload.h"
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include <string>
-#include <glm/gtc/matrix_transform.hpp>
 
 #ifndef PROJECT_ROOT_DIR
 #define PROJECT_ROOT_DIR "."
@@ -68,15 +66,16 @@ void Game::Update()
 	// unsigned int matrixID = glGetUniformLocation(shaderProgram.GetID(),"Model");
 	// glUniformMatrix4fv(matrixID,1,GL_FALSE,&Model[0][0]);
 
-	Model1 = glm::mat4(1.0f);
-	Model1 = glm::translate(Model1, glm::vec3(.0f,.0f,.0f));
-	Model1 = glm::scale(Model1, glm::vec3(.5f,.5f,.5f));
-	Model1 = glm::rotate(Model1, glm::radians(150.0f), glm::vec3(.0f,1.0f,.0f));
+	objActor.ResetModelMatrix();
+	objActor.ApplyTranslation(glm::vec3(0.0f,0.0f,0.0f));
+	objActor.ApplyScale(glm::vec3(0.2f,0.2f,0.2f));
+	objActor.ApplyRotation(150.0f,glm::vec3(0.0f,1.0f,0.0f));
 
-	Model2 = glm::mat4(1.0f);
-	Model2 = glm::translate(Model2, glm::vec3(.0f,.0f,.0f));
-	Model2 = glm::scale(Model2, glm::vec3(.5f,.5f,.5f));
-	Model2 = glm::rotate(Model2, glm::radians(150.0f), glm::vec3(.0f,1.0f,.0f));
+	objActor2.ResetModelMatrix();
+	objActor2.ApplyRotation(float(glfwGetTime()) * 180, glm::vec3(0.0f,1.0f,0.0f));
+	objActor2.ApplyTranslation(glm::vec3(0.7f,0.0f,0.0f));
+	objActor2.ApplyScale(glm::vec3(0.2f,0.2f,0.2f));
+	objActor2.ApplyRotation(-float(glfwGetTime()) * 180,glm::vec3(0.0f,1.0f,0.0f));
 }
 
 void Game::Draw()
