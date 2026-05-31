@@ -91,3 +91,7 @@ void ShaderProgram::Use() const{
 unsigned int ShaderProgram::GetID() const{
 	return shaderProgramID;
 }
+
+unsigned int ShaderProgram::GetUniformID(const char* uniformName) const {
+	return glGetUniformLocation(shaderProgramID, uniformName);
+}

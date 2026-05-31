@@ -80,12 +80,14 @@ void Game::Update()
 
 void Game::Draw()
 {
-	unsigned int matrixID = glGetUniformLocation(shaderProgram.GetID(), "Model");
+	unsigned int matrixID = shaderProgram.GetUniformID("Model");
 
 	window.UseShader(shaderProgram);
-	glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
+	//glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
+	shaderProgram.SendUniform<glm::mat4>(matrixID,objActor.GetModelMatrix());
 	window.DrawActor(objActor);
-	glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
+	//glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
+	shaderProgram.SendUniform<glm::mat4>(matrixID, objActor2.GetModelMatrix());
 	window.DrawActor(objActor2);
 
 	/*
