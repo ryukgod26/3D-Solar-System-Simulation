@@ -19,6 +19,7 @@ class Window{
 		void SwapBuffers();
 		bool ShouldClose() const;
 		void ClearBuffers();
+		double GetElapsedTime() const;
 	private:
 		std::unique_ptr<GLFWwindow, std::function<void(GLFWwindow*)>> window;
 

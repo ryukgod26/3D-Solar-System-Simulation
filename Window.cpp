@@ -68,3 +68,7 @@ bool Window::ShouldClose() const{
 void Window::ClearBuffers(){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
+
+double Window::GetElapsedTime() const {
+	return glfwGetTime();
+}

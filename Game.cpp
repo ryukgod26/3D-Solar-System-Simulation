@@ -72,10 +72,10 @@ void Game::Update()
 	objActor.ApplyRotation(150.0f,glm::vec3(0.0f,1.0f,0.0f));
 
 	objActor2.ResetModelMatrix();
-	objActor2.ApplyRotation(float(glfwGetTime()) * 180, glm::vec3(0.0f,1.0f,0.0f));
+	objActor2.ApplyRotation(float(window.GetElapsedTime()) * 180, glm::vec3(0.0f,1.0f,0.0f));
 	objActor2.ApplyTranslation(glm::vec3(0.7f,0.0f,0.0f));
 	objActor2.ApplyScale(glm::vec3(0.2f,0.2f,0.2f));
-	objActor2.ApplyRotation(-float(glfwGetTime()) * 180,glm::vec3(0.0f,1.0f,0.0f));
+	objActor2.ApplyRotation(-float(window.GetElapsedTime()) * 180,glm::vec3(0.0f,1.0f,0.0f));
 }
 
 void Game::Draw()

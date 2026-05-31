@@ -9,7 +9,8 @@ class Actor{
 		Actor& operator=(const Actor& other) = delete;
 		virtual ~Actor() noexcept;
 		unsigned int GetVAO() const;
-		unsigned int GetVertexCount() const;
+		int GetVertexCount() const;
+:q
 
 		void ResetModelMatrix();
 		void ApplyTranslation(glm::vec3 translation);
@@ -17,7 +18,7 @@ class Actor{
 		void ApplyRotation(float degrees, glm::vec3 axis);
 		const glm::mat4& GetModelMatrix const;
 	private:
-		unsigned int vertexCount;
+		int vertexCount;
 
 		unsigned int VAO;
 		unsigned int VBOVertex;

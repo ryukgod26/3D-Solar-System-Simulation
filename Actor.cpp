@@ -12,7 +12,7 @@ Actor::Actor(const char* objectPath){
 	std::vector<glm::vec3> normals;
 	loadOBJ(objectPath, vertexPositions, textureCoordinates, normals);
 
-	vertexCount = vertexPositions.size();
+	vertexCount = (int)vertexPositions.size();
 	assert(vertexCount >= 3);
 
 	glGenVertexArrays(1, & VAO);
@@ -48,7 +48,7 @@ unsigned int Actor::GetVAO() const {
 	return VAO;
 }
 
-unsigned int Actor::GetVertexCount() const{
+int Actor::GetVertexCount() const{
 	return vertexCount;
 }
 
