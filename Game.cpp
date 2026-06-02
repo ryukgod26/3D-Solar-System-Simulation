@@ -3,6 +3,7 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include <string>
+#include <glm/matrix_transform.hpp>
 
 #ifndef PROJECT_ROOT_DIR
 #define PROJECT_ROOT_DIR "."
@@ -80,14 +81,17 @@ void Game::Update()
 
 void Game::Draw()
 {
+	glm::mat4 projection = glm::perspective(glm::radians(45.0f), 800.0f/600.0f, 0.1f,100.0f);
+	glm::mat4 view = glm::mat4(1.0f);
+	view = glm::translate(view, glm::vec3(0.0f, 0.0f, -8.0f));
 	unsigned int matrixID = shaderProgram.GetUniformID("Model");
 
 	window.UseShader(shaderProgram);
 	//glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
-	shaderProgram.SendUniform<glm::mat4>(matrixID,objActor.GetModelMatrix());
+	shaderProgram.SendUniform<glm::mat4>(matrixID,projection * view * objActor.GetModelMatrix());
 	window.DrawActor(objActor);
 	//glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
-	shaderProgram.SendUniform<glm::mat4>(matrixID, objActor2.GetModelMatrix());
+	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * view * objActor2.GetModelMatrix());
 	window.DrawActor(objActor2);
 
 	/*
