@@ -32,7 +32,10 @@ namespace settings{
 	inline constexpr float cameraPitch = 0.0f;
 	inline constexpr float cameraSensitivity = 0.1f;
 	inline constexpr float cameraSpeed = 2.5f;
-	inline constexpr float cameraZoom = 45.0f;
+//	inline constexpr float cameraZoom = 45.0f;
+
+	inline constexpr float cameraFOV = 45.0f;
+	inline constexpr float cameraNearPlaneDistance = 
 	inline constexpr glm::vec3 cameraIntialPosition = {0.0f,0.0f,10.0f};
 }
 #endif

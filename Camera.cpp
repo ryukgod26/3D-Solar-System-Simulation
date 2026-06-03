@@ -1,16 +1,19 @@
 #include "Camera.h"
 #include <glm/gtc/matrix_transform.hpp>
 
-Camera::Camera(glm::vec3 position, glm::vec3 worldUp, float movementSpeed, float yaw, float pitch, float mouseSensitivity, float zoom) : 
+Camera::Camera(glm::vec3 position, glm::vec3 worldUp, float movementSpeed, float yaw, float pitch, float mouseSensitivity, float zoom, float screenRatio, float nearPlaneDistance, float farPlaneDistance) : 
 	position(position),
-	front(glm::vec3(0.0f, 0.0f, -1.0f)),
-	up(up),
+//	front(glm::vec3(0.0f, 0.0f, -1.0f)),
+//	up(up),
 	worldUp(worldUp),
 	yaw(yaw),
 	pitch(pitch),
 	movementSpeed(movementSpeed),
 	mouseSensitivity(mouseSensitivity),
-	zoom(zoom)
+	zoom(zoom),
+	screenRatio(screenRatio),
+	nearPlaneDistance(nearPlaneDistance),
+	farPlaneDistance(farPlaneDistance)
 {
 	UpdateCameraVectors():
 }
@@ -71,4 +74,8 @@ void Camera::UpdateCameraVectors(){
 	front = glm::normalize(front);
 	right = glm::normalize(glm::cross(front, worldUp));
 	up = glm::normalize(glm::cross(right, front));
+}
+
+glm::mat4 Camera::GetPerspectiveMatrix() const{
+	return glm::perspective(glm::radians(zoom),screenRatio,nearPlaneDistance, farPlaneDistance);
 }
