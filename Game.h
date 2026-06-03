@@ -5,6 +5,7 @@
 #include "ShaderProgram.h"
 #include <glm/glm.hpp>
 //#include <glm/gtc/matrix_transform.hpp>
+#include "Camera.h"
 
 class Game{
 	public:
@@ -20,6 +21,7 @@ class Game{
 		void Draw();
 		Window window;
 		ShaderProgram shaderProgram;
+		Camera camera;
 		/*
 		std::vector<glm::vec3> vertexPositions;
 		std::vector<glm::vec2> textureCoordinates;
