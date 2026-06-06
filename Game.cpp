@@ -1,9 +1,4 @@
 #include "Game.h"
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-#include <iostream>
-#include <string>
-#include <glm/matrix_transform.hpp>
 #include "Settings.h"
 
 #ifndef PROJECT_ROOT_DIR
@@ -51,7 +46,7 @@ void Game::Tick()
 	Update();
 	Draw();
 	window.SwapBuffers();
-	glfwPollEvents();
+	window.glfwPollEvents();
 }
 
 bool Game::ShouldClose() const

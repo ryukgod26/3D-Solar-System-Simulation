@@ -72,3 +72,7 @@ void Window::ClearBuffers(){
 double Window::GetElapsedTime() const {
 	return glfwGetTime();
 }
+
+void Window::PollEvents() const {
+	glfwPollEvents();
+}

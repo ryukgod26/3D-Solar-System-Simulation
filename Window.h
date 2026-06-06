@@ -20,6 +20,7 @@ class Window{
 		bool ShouldClose() const;
 		void ClearBuffers();
 		double GetElapsedTime() const;
+		void PollEvents() const;
 	private:
 		std::unique_ptr<GLFWwindow, std::function<void(GLFWwindow*)>> window;
 

@@ -15,7 +15,11 @@ namespace settings{
 	constexpr float cameraPitch = 0.0f;
 	constexpr float cameraSensitivity = 0.1f;
 	constexpr float cameraSpeed = 2.5f;
-	constexpr float cameraZoom = 45.0f;
+//	constexpr float cameraZoom = 45.0f;
+	constexpr float cameraFOV = 45.0f;                         
+	constexpr float cameraNearPlaneDistance = 0.1f;
+	constexpr float cameraFarPlaneDistance = 100.0f;         
+	constexpr float screenRatio = windowWidth / windowHeight;
 	constexpr glm::vec3 cameraIntialPosition = {0.0f,0.0f,10.0f};
 }
 
@@ -35,7 +39,9 @@ namespace settings{
 //	inline constexpr float cameraZoom = 45.0f;
 
 	inline constexpr float cameraFOV = 45.0f;
-	inline constexpr float cameraNearPlaneDistance = 
+	inline constexpr float cameraNearPlaneDistance = 0.1f;
+	inline constexpr float cameraFarPlaneDistance = 100.0f;
+	inline constexpr float screenRatio = windowWidth / windowHeight;
 	inline constexpr glm::vec3 cameraIntialPosition = {0.0f,0.0f,10.0f};
 }
 #endif
