@@ -83,9 +83,10 @@ void Game::Draw()
 //	glm::mat4 view = glm::mat4(1.0f);
 //	view = glm::translate(view, glm::vec3(0.0f, 0.0f, -8.0f));
 	glm::mat4 viewMatrix = camera.GetViewMatrix();
-	unsigned int matrixID = shaderProgram.GetUniformID("Model");
 
 	window.UseShader(shaderProgram);
+	unsigned int matrixID = shaderProgram.GetUniformID("MVP");
+
 	//glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
 	shaderProgram.SendUniform<glm::mat4>(matrixID,projection * viewMatrix * objActor.GetModelMatrix());
 	window.DrawActor(objActor);

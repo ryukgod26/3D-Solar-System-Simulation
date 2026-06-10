@@ -19,9 +19,10 @@ namespace settings{
 	constexpr float cameraFOV = 45.0f;                         
 	constexpr float cameraNearPlaneDistance = 0.1f;
 	constexpr float cameraFarPlaneDistance = 100.0f;         
-	constexpr float screenRatio = windowWidth / windowHeight;
+	constexpr float screenRatio = float(windowWidth) / float(windowHeight);
 	constexpr glm::vec3 cameraIntialPosition = {0.0f,0.0f,10.0f};
 }
+
 
 #else
 namespace settings{
@@ -41,7 +42,7 @@ namespace settings{
 	inline constexpr float cameraFOV = 45.0f;
 	inline constexpr float cameraNearPlaneDistance = 0.1f;
 	inline constexpr float cameraFarPlaneDistance = 100.0f;
-	inline constexpr float screenRatio = windowWidth / windowHeight;
+	inline constexpr float screenRatio = float(windowWidth) / float(windowHeight);
 	inline constexpr glm::vec3 cameraIntialPosition = {0.0f,0.0f,10.0f};
 }
 #endif
