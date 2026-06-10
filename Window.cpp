@@ -1,4 +1,5 @@
 #include "Window.h"
+#include "Settings.h"
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
@@ -33,6 +34,9 @@ window(nullptr,[](GLFWwindow* window){glfwDestroyWindow(window);}){
 	glClearColor(0.2f,0.3f,0.4f,1.0f);
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
+	if constexpr (settings::captureMouse) {
+		glfw
+	}
 	glfwSetFramebufferSizeCallback(window.get(),[](GLFWwindow* window,int width, int height){glViewport(0,0,width,height);});
 
 }

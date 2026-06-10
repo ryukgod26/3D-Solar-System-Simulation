@@ -28,6 +28,8 @@ namespace settings{
 	constexpr int upKey = 69;
 	constexpr int downKey = 81;
 
+	constexpr bool captureMouse = true;
+
 
 	static_assert(windowWidth > 0 && windowHeight > 0);
 	static_assert(viewportWidth > 0 && viewportHeight > 0);
@@ -63,6 +65,8 @@ namespace settings{
 	inline constexpr int leftKey = 65;
 	inline constexpr int upKey = 69;
 	inline constexpr int downKey = 81;
+
+	inline constexpr bool captureMouse = true;
 
 	static_assert(windowWidth > 0 && windowHeight > 0);
 	static_assert(viewportWidth > 0 && viewportHeight > 0);
