@@ -14,10 +14,10 @@ namespace settings{
 	constexpr float cameraYaw = -90.0f;
 	constexpr float cameraPitch = 0.0f;
 	constexpr float cameraSensitivity = 0.1f;
-	constexpr float cameraSpeed = 2.5f;
+	constexpr float cameraSpeed = 4.0f;
 //	constexpr float cameraZoom = 45.0f;
 	constexpr float cameraFOV = 45.0f;                         
-	constexpr float cameraNearPlaneDistance = 0.1f;
+	constexpr float cameraNearPlaneDistance = 0.3f;
 	constexpr float cameraFarPlaneDistance = 100.0f;         
 	constexpr float screenRatio = float(windowWidth) / float(windowHeight);
 	constexpr glm::vec3 cameraIntialPosition = {0.0f,0.0f,10.0f};
@@ -27,6 +27,13 @@ namespace settings{
 	constexpr int leftKey = 65;
 	constexpr int upKey = 69;
 	constexpr int downKey = 81;
+
+
+	static_assert(windowWidth > 0 && windowHeight > 0);
+	static_assert(viewportWidth > 0 && viewportHeight > 0);
+	static_assert(cameraNearPlaneDistance > 0.0f);
+	static_assert(cameraNearPlaneDistance < cameraFarPlaneDistance);
+	static_assert(cameraSensitivity > 0.0f);
 }
 
 
@@ -42,11 +49,11 @@ namespace settings{
 	inline constexpr float cameraYaw = -90.0f;
 	inline constexpr float cameraPitch = 0.0f;
 	inline constexpr float cameraSensitivity = 0.1f;
-	inline constexpr float cameraSpeed = 2.5f;
+	inline constexpr float cameraSpeed = 4.0f;
 //	inline constexpr float cameraZoom = 45.0f;
 
 	inline constexpr float cameraFOV = 45.0f;
-	inline constexpr float cameraNearPlaneDistance = 0.1f;
+	inline constexpr float cameraNearPlaneDistance = 0.3f;
 	inline constexpr float cameraFarPlaneDistance = 100.0f;
 	inline constexpr float screenRatio = float(windowWidth) / float(windowHeight);
 	inline constexpr glm::vec3 cameraIntialPosition = {0.0f,0.0f,10.0f};
@@ -56,5 +63,11 @@ namespace settings{
 	inline constexpr int leftKey = 65;
 	inline constexpr int upKey = 69;
 	inline constexpr int downKey = 81;
+
+	static_assert(windowWidth > 0 && windowHeight > 0);
+	static_assert(viewportWidth > 0 && viewportHeight > 0);
+	static_assert(cameraNearPlaneDistance > 0.0f);
+	static_assert(cameraNearPlaneDistance < cameraFarPlaneDistance);
+	static_assert(cameraSensitivity > 0.0f);
 }
 #endif
