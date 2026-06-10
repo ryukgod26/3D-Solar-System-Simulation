@@ -25,6 +25,8 @@ namespace settings{
 	constexpr int backwardKey = 83;
 	constexpr int rightKey = 68;
 	constexpr int leftKey = 65;
+	constexpr int upKey = 69;
+	constexpr int downKey = 81;
 }
 
 
@@ -52,5 +54,7 @@ namespace settings{
 	inline constexpr int backwardKey = 83;
 	inline constexpr int rightKey = 68;
 	inline constexpr int leftKey = 65;
+	inline constexpr int upKey = 69;
+	inline constexpr int downKey = 81;
 }
 #endif

@@ -21,17 +21,23 @@ Camera::Camera(glm::vec3 position, glm::vec3 worldUp, float movementSpeed, float
 void Camera::ProcessKeyboard(Movement direction, float deltaTime){
 	float velocity = movementSpeed * deltaTime;
 	switch(direction) {
-		case Movement::Forward:
+		case Movement::FORWARD:
 			position += front * velocity;
 			break;
-		case Movement::Backward:
+		case Movement::BACKWARD:
 			position -= front * velocity;
 			break;
-		case Movement::Right:
+		case Movement::RIGHT:
 			position += right * velocity;
 			break;
-		case Movement::Left:
+		case Movement::LEFT:
 			position -= right * velocity;
+			break;
+		case Movement::UP:
+			position += up * velocity;
+			break;
+		case Movement::DOWN:
+			position -= up * velocity;
 			break;
 	}
 }

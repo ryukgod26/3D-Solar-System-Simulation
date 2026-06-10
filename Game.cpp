@@ -81,6 +81,14 @@ void Game::Update()
 		camera.ProcessKeyboard(Camera::Movement::RIGHT, 0.016f);
 	}
 
+	if(window.IsKeyPressed(settings::upKey)){
+		camera.ProcessKeyboard(Camera::Movement::UP, 0.016f);
+	}
+
+	if(window.IsKeyPressed(settings::downKey)){
+		camera.ProcessKeyboard(Camera::Movement::DOWN, 0.016f)
+	}
+
 	objActor.ResetModelMatrix();
 	objActor.ApplyTranslation(glm::vec3(0.0f,0.0f,0.0f));
 	objActor.ApplyScale(glm::vec3(0.2f,0.2f,0.2f));

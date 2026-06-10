@@ -7,7 +7,9 @@ class Camera{
 			FORWARD,
 			BACKWARD,
 			LEFT,
-			RIGHT
+			RIGHT,
+			UP,
+			DOWN
 		};
 		Camera(glm::vec3 position, glm::vec3 worldUp, float movementSpeed, float yaw, float pitch, float mouseSensitivity, float zoom, float screenRatio, float nearPlaneDistance = 0.1f, float farPlaneDistance = 100.0f);
 		glm::mat4 GetViewMatrix() const;
