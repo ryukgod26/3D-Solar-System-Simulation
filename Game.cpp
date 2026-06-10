@@ -64,6 +64,23 @@ void Game::Update()
 	// unsigned int matrixID = glGetUniformLocation(shaderProgram.GetID(),"Model");
 	// glUniformMatrix4fv(matrixID,1,GL_FALSE,&Model[0][0]);
 
+
+	if (window.IsKeyPressed(settings::forwardKey)){
+		camera.ProcessKeyboard(Camera::Movement::FORWARD, 0.016f);
+	}
+
+	if(window.IsKeyPressed(settings::backwardKey)){
+		camera.ProcessKeyboard(Camera::Movement::BACKWARD, 0.016f);
+	}
+
+	if(window.IsKeyPressed(settings::leftKey)) {
+		camera.ProcessKeyboard(Camera::Movement::LEFT, 0.016f);
+	}
+
+	if(window.IsKeyPressed(settings::rightKey)){
+		camera.ProcessKeyboard(Camera::Movement::RIGHT, 0.016f);
+	}
+
 	objActor.ResetModelMatrix();
 	objActor.ApplyTranslation(glm::vec3(0.0f,0.0f,0.0f));
 	objActor.ApplyScale(glm::vec3(0.2f,0.2f,0.2f));

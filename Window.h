@@ -21,6 +21,7 @@ class Window{
 		void ClearBuffers();
 		double GetElapsedTime() const;
 		void PollEvents() const;
+		bool IsKeyPressed(int key) const;
 	private:
 		std::unique_ptr<GLFWwindow, std::function<void(GLFWwindow*)>> window;
 

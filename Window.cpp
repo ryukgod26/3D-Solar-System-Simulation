@@ -76,3 +76,7 @@ double Window::GetElapsedTime() const {
 void Window::PollEvents() const {
 	glfwPollEvents();
 }
+
+bool IsKeyPressed(int key) const{
+	return glfwGetKey(window.get(), key) == GLFW_PRESS;
+}

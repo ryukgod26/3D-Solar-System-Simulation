@@ -21,6 +21,10 @@ namespace settings{
 	constexpr float cameraFarPlaneDistance = 100.0f;         
 	constexpr float screenRatio = float(windowWidth) / float(windowHeight);
 	constexpr glm::vec3 cameraIntialPosition = {0.0f,0.0f,10.0f};
+	constexpr int forwardKey = 87;
+	constexpr int backwardKey = 83;
+	constexpr int rightKey = 68;
+	constexpr int leftKey = 65;
 }
 
 
@@ -44,5 +48,9 @@ namespace settings{
 	inline constexpr float cameraFarPlaneDistance = 100.0f;
 	inline constexpr float screenRatio = float(windowWidth) / float(windowHeight);
 	inline constexpr glm::vec3 cameraIntialPosition = {0.0f,0.0f,10.0f};
+	inline constexpr int forwardKey = 87;
+	inline constexpr int backwardKey = 83;
+	inline constexpr int rightKey = 68;
+	inline constexpr int leftKey = 65;
 }
 #endif
