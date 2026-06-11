@@ -4,6 +4,7 @@
 #include <functional>
 #include "Actor.h"
 #include "ShaderProgram.h"
+#include <glm/vec2.hpp>
 
 class Window{
 	public:
@@ -22,6 +23,7 @@ class Window{
 		double GetElapsedTime() const;
 		void PollEvents() const;
 		bool IsKeyPressed(int key) const;
+		glm::vec2 GetMousePosition() const;
 	private:
 		std::unique_ptr<GLFWwindow, std::function<void(GLFWwindow*)>> window;
 

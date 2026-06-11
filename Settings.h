@@ -13,10 +13,11 @@ namespace settings{
 	constexpr char windowTitle[] = "3D Solar System";
 	constexpr float cameraYaw = -90.0f;
 	constexpr float cameraPitch = 0.0f;
-	constexpr float cameraSensitivity = 0.1f;
+	constexpr float cameraSensitivity = 0.05f;
 	constexpr float cameraSpeed = 4.0f;
 //	constexpr float cameraZoom = 45.0f;
 	constexpr float cameraFOV = 45.0f;                         
+	constexpr float cameraMaxPitch = 70.0f;
 	constexpr float cameraNearPlaneDistance = 0.3f;
 	constexpr float cameraFarPlaneDistance = 100.0f;         
 	constexpr float screenRatio = float(windowWidth) / float(windowHeight);
@@ -50,10 +51,11 @@ namespace settings{
 	inline constexpr char windowTitle[] = "3D Solar System";
 	inline constexpr float cameraYaw = -90.0f;
 	inline constexpr float cameraPitch = 0.0f;
-	inline constexpr float cameraSensitivity = 0.1f;
+	inline constexpr float cameraSensitivity = 0.05f;
 	inline constexpr float cameraSpeed = 4.0f;
 //	inline constexpr float cameraZoom = 45.0f;
 
+	inline constexpr float cameraMaxPitch = 70.0f;
 	inline constexpr float cameraFOV = 45.0f;
 	inline constexpr float cameraNearPlaneDistance = 0.3f;
 	inline constexpr float cameraFarPlaneDistance = 100.0f;

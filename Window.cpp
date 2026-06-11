@@ -35,7 +35,7 @@ window(nullptr,[](GLFWwindow* window){glfwDestroyWindow(window);}){
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
 	if constexpr (settings::captureMouse) {
-		glfw
+		glfwSetInputMode(window.get(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	}
 	glfwSetFramebufferSizeCallback(window.get(),[](GLFWwindow* window,int width, int height){glViewport(0,0,width,height);});
 
@@ -83,4 +83,10 @@ void Window::PollEvents() const {
 
 bool IsKeyPressed(int key) const{
 	return glfwGetKey(window.get(), key) == GLFW_PRESS;
+}
+
+glm::vec2 Window::GetMousePosition() const{
+	double xpos, ypos;
+	glfwGetCursorPos(window.get(), &xpos, &ypos);
+	return glm::vec2(xpos, ypos);
 }

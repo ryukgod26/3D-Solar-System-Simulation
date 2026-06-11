@@ -34,6 +34,7 @@ class Game{
 
 		Actor objActor;
 		Actor objActor2;
+		glm::vec2 lastMousePosition;
 
 /*
 		//camera

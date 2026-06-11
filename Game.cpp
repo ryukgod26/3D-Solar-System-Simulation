@@ -7,10 +7,10 @@
 
 Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int viewportWidth, int viewportHeight,  const std::string title, GLFWmonitor *monitor,GLFWwindow* share) : 
 	window(windowWidth,windowHeight,viewportX,viewportY,viewportWidth,viewportHeight,title,monitor,share),shaderProgram(std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/VertexShader.vert",std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/FragmentShader.frag"), 
-	camera(settings::cameraInitialPosition, {0.0f,1.0f,0.0f}, settings::cameraSpeed, seetings::cameraYaw, settings::cameraPitch, settings::cameraSensitivity, settings::cameraFOV, settings::screenRatio, settings::cameraNearPlaneDistance, settings::cameraFarPlaneDistance),
+	camera(settings::cameraInitialPosition, {0.0f,1.0f,0.0f}, settings::cameraSpeed, seetings::cameraYaw, settings::cameraPitch, settings::cameraMaxPitch, settings::cameraSensitivity, settings::cameraFOV, settings::screenRatio, settings::cameraNearPlaneDistance, settings::cameraFarPlaneDistance),
 	objActor("monkey.obj"), objActor2("cube.obj")
 {
-
+	lastMousePosition = window.GetMousePosition();
 	/*
 	std::string objPath = std::string(PROJECT_ROOT_DIR) + "/monkey.obj";
 	if (!loadOBJ(objPath.c_str(),vertexPositions,textureCoordinates,normals)){
@@ -64,6 +64,10 @@ void Game::Update()
 	// unsigned int matrixID = glGetUniformLocation(shaderProgram.GetID(),"Model");
 	// glUniformMatrix4fv(matrixID,1,GL_FALSE,&Model[0][0]);
 
+	glm::vec2 mousePosition = window.GetMousePosition();
+	glm::vec2 cameraRotationOffset{mousePosition.x - lastMousePosition.x, lastMousePosition.y - mousePosition.y};
+	lastMousePosition = mousePosition;
+	camera.Rotate(cameraRotationOffset);
 
 	if (window.IsKeyPressed(settings::forwardKey)){
 		camera.ProcessKeyboard(Camera::Movement::FORWARD, 0.016f);
