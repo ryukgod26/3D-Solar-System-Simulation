@@ -8,7 +8,7 @@
 Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int viewportWidth, int viewportHeight,  const std::string title, GLFWmonitor *monitor,GLFWwindow* share) : 
 	window(windowWidth,windowHeight,viewportX,viewportY,viewportWidth,viewportHeight,title,monitor,share),shaderProgram(std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/VertexShader.vert",std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/FragmentShader.frag"), 
 	camera(settings::cameraInitialPosition, {0.0f,1.0f,0.0f}, settings::cameraSpeed, seetings::cameraYaw, settings::cameraPitch, settings::cameraMaxPitch, settings::cameraSensitivity, settings::cameraFOV, settings::screenRatio, settings::cameraNearPlaneDistance, settings::cameraFarPlaneDistance),
-	objActor("monkey.obj"), objActor2("cube.obj")
+	objActor("monkey.obj"), objActor2("cube.obj"), dome("sphere.obj")
 {
 	lastMousePosition = window.GetMousePosition();
 	/*
@@ -103,6 +103,9 @@ void Game::Update()
 	objActor2.ApplyTranslation(glm::vec3(0.7f,0.0f,0.0f));
 	objActor2.ApplyScale(glm::vec3(0.2f,0.2f,0.2f));
 	objActor2.ApplyRotation(-float(window.GetElapsedTime()) * 180,glm::vec3(0.0f,1.0f,0.0f));
+
+	dome.ResetModelMatrix();
+	dome.ApplyScale(glm::vec3{100.0f});
 }
 
 void Game::Draw()
@@ -122,6 +125,9 @@ void Game::Draw()
 	//glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
 	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * objActor2.GetModelMatrix());
 	window.DrawActor(objActor2);
+
+	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * dome.GetModelMatrix());
+	window.DrawActor(dome);
 
 	/*
 	glBindVertexArray(VAO);

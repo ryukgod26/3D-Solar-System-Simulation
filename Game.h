@@ -34,6 +34,7 @@ class Game{
 
 		Actor objActor;
 		Actor objActor2;
+		Actor dome;
 		glm::vec2 lastMousePosition;
 
 /*

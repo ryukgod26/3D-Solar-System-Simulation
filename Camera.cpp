@@ -35,10 +35,10 @@ void Camera::ProcessKeyboard(Movement direction, float deltaTime){
 			position -= right * velocity;
 			break;
 		case Movement::UP:
-			position += up * velocity;
+			position += worldUp * velocity;
 			break;
 		case Movement::DOWN:
-			position -= up * velocity;
+			position -= worldUp * velocity;
 			break;
 	}
 }
