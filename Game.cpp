@@ -8,7 +8,7 @@
 Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int viewportWidth, int viewportHeight,  const std::string title, GLFWmonitor *monitor,GLFWwindow* share) : 
 	window(windowWidth,windowHeight,viewportX,viewportY,viewportWidth,viewportHeight,title,monitor,share),shaderProgram(std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/VertexShader.vert",std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/FragmentShader.frag"), 
 	camera(settings::cameraInitialPosition, {0.0f,1.0f,0.0f}, settings::cameraSpeed, seetings::cameraYaw, settings::cameraPitch, settings::cameraMaxPitch, settings::cameraSensitivity, settings::cameraFOV, settings::screenRatio, settings::cameraNearPlaneDistance, settings::cameraFarPlaneDistance),
-	planetTexture("planet.jpg"), objActor("monkey.obj"), objActor2("cube.obj"), dome("sphere.obj"),
+	planetTexture("ResFiles/Textures/planet.jpeg"), objActor("monkey.obj"), objActor2("cube.obj"), dome("sphere.obj"),
 {
 	lastMousePosition = window.GetMousePosition();
 	/*
