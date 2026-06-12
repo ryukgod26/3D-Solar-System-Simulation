@@ -34,9 +34,10 @@ class Game{
 		*/
 
 		Texture planetTexture;
+		Texture skyboxTexture;
 		Actor objActor;
 		Actor objActor2;
-		Actor dome;
+		Actor skyBox;
 		glm::vec2 lastMousePosition;
 
 /*
