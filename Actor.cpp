@@ -6,7 +6,8 @@
 #include <assert.h>
 #include <glm/gtc/matrix_transform.hpp>
 
-Actor::Actor(const char* objectPath){
+Actor::Actor(const char* objectPath, const Texture& texture)
+: texture(texture){
 	std::vector<glm::vec3> vertexPositions;
 	std::vector<glm::vec3> textureCoordinates;
 	std::vector<glm::vec3> normals;
@@ -70,4 +71,8 @@ void Actor::ApplyRotation(float degrees, glm::vec3 axis){
 
 const glm::mat4& Actor::GetModelMatrix() const{
 	return modelMatrix;
+}
+
+const Texture& Actor::GetTexture() const{
+	return texture;
 }
