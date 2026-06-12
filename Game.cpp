@@ -8,7 +8,7 @@
 Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int viewportWidth, int viewportHeight,  const std::string title, GLFWmonitor *monitor,GLFWwindow* share) : 
 	window(windowWidth,windowHeight,viewportX,viewportY,viewportWidth,viewportHeight,title,monitor,share),shaderProgram(std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/VertexShader.vert",std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/FragmentShader.frag"), 
 	camera(settings::cameraInitialPosition, {0.0f,1.0f,0.0f}, settings::cameraSpeed, seetings::cameraYaw, settings::cameraPitch, settings::cameraMaxPitch, settings::cameraSensitivity, settings::cameraFOV, settings::screenRatio, settings::cameraNearPlaneDistance, settings::cameraFarPlaneDistance),
-	planetTexture("ResFiles/Textures/planet.jpeg"), skyboxTexture("ResFiles/Textures/stars.jpeg"),objActor("monkey.obj", planetTexture), objActor2("cube.obj", planetTexture), skyBox("sphere.obj", skyboxTexture),
+	sunTexture("ResFiles/Textures/sun.jpeg"), planetTexture("ResFiles/Textures/planet.jpeg"), skyboxTexture("ResFiles/Textures/stars.jpeg"), sun("monkey.obj", sunTexture), earth("cube.obj", planetTexture), skyBox("sphere.obj", skyboxTexture),
 {
 	lastMousePosition = window.GetMousePosition();
 	/*
@@ -93,16 +93,14 @@ void Game::Update()
 		camera.ProcessKeyboard(Camera::Movement::DOWN, 0.016f)
 	}
 
-	objActor.ResetModelMatrix();
-	objActor.ApplyTranslation(glm::vec3(0.0f,0.0f,0.0f));
-	objActor.ApplyScale(glm::vec3(0.2f,0.2f,0.2f));
-	objActor.ApplyRotation(150.0f,glm::vec3(0.0f,1.0f,0.0f));
+	sun.ResetModelMatrix();
+//	sun.ApplyTranslation(glm::vec3(0.0f,0.0f,0.0f));
+	sun.ApplyRotation(float(window.GetElapsedTime() * 20),glm::vec3(0.0f,1.0f,0.0f));
+	sun.ApplyScale(glm::vec3(5.0f,5.0f,5.0f));
 
-	objActor2.ResetModelMatrix();
-	objActor2.ApplyRotation(float(window.GetElapsedTime()) * 180, glm::vec3(0.0f,1.0f,0.0f));
-	objActor2.ApplyTranslation(glm::vec3(0.7f,0.0f,0.0f));
-	objActor2.ApplyScale(glm::vec3(0.2f,0.2f,0.2f));
-	objActor2.ApplyRotation(-float(window.GetElapsedTime()) * 180,glm::vec3(0.0f,1.0f,0.0f));
+	earth.ResetModelMatrix();
+	earth.ApplyRotation(float(window.GetElapsedTime()) * 90, glm::vec3(0.0f,1.0f,0.0f));
+	objActor2.ApplyTranslation(glm::vec3(10.0f,0.0f,0.0f));
 
 	skyBox.ResetModelMatrix();
 	skyBox.ApplyScale(glm::vec3{100.0f});
@@ -120,11 +118,11 @@ void Game::Draw()
 	unsigned int matrixID = shaderProgram.GetUniformID("MVP");
 
 	//glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
-	shaderProgram.SendUniform<glm::mat4>(matrixID,projection * viewMatrix * objActor.GetModelMatrix());
-	window.DrawActor(objActor);
+	shaderProgram.SendUniform<glm::mat4>(matrixID,projection * viewMatrix * sun.GetModelMatrix());
+	window.DrawActor(sun);
 	//glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
-	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * objActor2.GetModelMatrix());
-	window.DrawActor(objActor2);
+	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * earth.GetModelMatrix());
+	window.DrawActor(earth);
 
 	viewMatrix = glm::mat4(glm::mat3(viewMatrix));
 	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * skyBox.GetModelMatrix());

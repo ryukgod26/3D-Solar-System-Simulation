@@ -35,8 +35,9 @@ class Game{
 
 		Texture planetTexture;
 		Texture skyboxTexture;
-		Actor objActor;
-		Actor objActor2;
+		Texture sunTexture;
+		Actor sun;
+		Actor earth;
 		Actor skyBox;
 		glm::vec2 lastMousePosition;
 
