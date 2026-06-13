@@ -6,10 +6,19 @@
 #endif
 
 Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int viewportWidth, int viewportHeight,  const std::string title, GLFWmonitor *monitor,GLFWwindow* share) : 
-	window(windowWidth,windowHeight,viewportX,viewportY,viewportWidth,viewportHeight,title,monitor,share),shaderProgram(std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/VertexShader.vert",std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/FragmentShader.frag"), 
-	camera(settings::cameraInitialPosition, settings::cameraSpeed, seetings::cameraYaw, settings::cameraPitch, settings::cameraMaxPitch, settings::cameraSensitivity, settings::cameraFOV, settings::screenRatio, settings::cameraNearPlaneDistance, settings::cameraFarPlaneDistance),
-	sphereMesh("ResFiles/Meshes/sphere.obj"),
-	sunTexture("ResFiles/Textures/sun.jpeg"), planetTexture("ResFiles/Textures/earth.jpeg"), mercuryTexture("ResFiles/Textures/mercury.jpg"),skyboxTexture("ResFiles/Textures/stars.jpeg"), 
+	window(windowWidth,windowHeight,viewportX,viewportY,viewportWidth,viewportHeight,title,monitor,share),shaderProgram(std::string(PROJECT_ROOT_DIR) + settings::shadersPath +"VertexShader.vert",std::string(PROJECT_ROOT_DIR) + settings::shadersPath + "FragmentShader.frag"), 
+	camera(settings::cameraInitialPosition, settings::cameraSpeed, settings::cameraYaw, settings::cameraPitch, settings::cameraMaxPitch, settings::cameraSensitivity, settings::cameraFOV, settings::screenRatio, settings::cameraNearPlaneDistance, settings::cameraFarPlaneDistance),
+	sphereMesh(std::string(PROJECT_ROOT_DIR) + settings::meshesPath+  "sphere.obj"),
+	sunTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "sun.jpeg"),
+       	planetTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath +"earth.jpeg"), 
+	mercuryTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath +"mercury.jpg"),
+	skyboxTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath +"stars.jpeg"), 
+	venusTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "venus.jpg"),
+	marsTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "mars.jpg"),
+	jupiterTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "jupiter.jpg"),
+	saturnTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "saturn.jpg"),
+	uranusTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "uranus.jpg"),
+	neptuneTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "neptune.jpg"),
 	//sun("monkey.obj", sunTexture), earth("cube.obj", planetTexture), skyBox("sphere.obj", skyboxTexture),
 {
 	lastMousePosition = window.GetMousePosition();
@@ -114,7 +123,7 @@ void Game::Update()
 	mercury.resetModelMatrix();
 	mercury.ApplyRotation(float(window.GetElapsedTime()) * 50, Camera::worldUp);
 	mercury.ApplyTranslation({ settings::earthOrbitRadius * 0.6f, 0.0f, 0.0f});
-	mercury.ApplyScale(glm::vec3{ settings::earthScale * 0.5f });
+	mercury.ApplyScale(glm::vec3{ settings::mercuryScale });
 
 /*	skyBox.ResetModelMatrix();
 	skyBox.ApplyScale(glm::vec3{settings::cameraFarPlaneDistance});*/

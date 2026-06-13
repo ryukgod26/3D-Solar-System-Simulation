@@ -3,7 +3,7 @@
 #include "stb_image.h"
 #include <iostream>
 
-Texture::Texture(const char* texturePath){
+Texture::Texture(std::string texturePath){
 	glGenTextures(1, &textureID);
 	glBindTexture(GL_TEXTURE_ID, &textureID);
 
@@ -12,7 +12,7 @@ Texture::Texture(const char* texturePath){
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAX_FILTER, GL_LINEAR);
 
-	unsigned char* data = stbi_load(texturePath, &width, &height, &channelsCount, 0);
+	unsigned char* data = stbi_load(texturePath.c_str(), &width, &height, &channelsCount, 0);
 	if (data){
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
 		glGenerateMipmap(GL_TEXTURE_2D);

@@ -1,9 +1,15 @@
 #pragma once
 #include "glm/glm.hpp"
+#include <string>
 
 # ifdef __WIN32__
 
 namespace settings{
+
+	std::string texturePath = "ResFiles/Textures/";
+	std::string meshesPath = "ResFiles/Meshes/";
+	std::string shadersPath = "ResFiles/Shaders/";
+
 	constexpr int windowWidth = 1280;
 	constexpr int windowHeight = 720;
 	constexpr int viewportX = 0;
@@ -34,6 +40,15 @@ namespace settings{
 
 	constexpr float earthOrbitRadius = 300.0f;
 	constexpr float earthScale = 10.0f;
+	constexpr float sunScale = 100.0f;
+	constexpr float mercuryScale = earthScale * 0.3f;
+	constexpr float venusScale = earthScale * 0.9f;
+	constexpr float marsScale = earthScale * 0.5f;
+	constexpr float jupiterScale = earthScale * 5.0f;
+	constexpr float saturnScale = earthScale * 4.0f;
+	constexpr float uranusScale = earthScale * 2.5f;
+	constexpr float neptuneScale = earthScale * 2.3f;
+
 
 	static_assert(windowWidth > 0 && windowHeight > 0);
 	static_assert(viewportWidth > 0 && viewportHeight > 0);
@@ -45,6 +60,11 @@ namespace settings{
 
 #else
 namespace settings{
+
+	inline std::string texturePath = "ResFiles/Textures/";
+	inline std::string meshesPath = "ResFiles/Meshes/";
+	inline std::string shadersPath = "ResFiles/Shaders/";
+
 	inline constexpr int windowWidth = 1280;
 	inline constexpr int windowHeight = 720;
 	inline constexpr int viewportX = 0;
@@ -76,6 +96,14 @@ namespace settings{
 
 	inline constexpr float earthOrbitRadius = 300.0f;
 	inline constexpr float earthScale = 10.0f;
+	inline constexpr float sunScale = 100.0f;
+	inline constexpr float mercuryScale = earthScale * 0.3f;
+	inline constexpr float venusScale = earthScale * 0.9f;
+	inline constexpr float marsScale = earthScale * 0.5f;
+	inline constexpr float jupiterScale = earthScale * 5.0f;
+	inline constexpr float saturnScale = earthScale * 4.0f;
+	inline constexpr float uranusScale = earthScale * 2.5f;
+	inline constexpr float neptuneScale = earthScale * 2.3f;
 
 	static_assert(windowWidth > 0 && windowHeight > 0);
 	static_assert(viewportWidth > 0 && viewportHeight > 0);

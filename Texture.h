@@ -1,8 +1,9 @@
 #pragma once
+#include <string>
 
 class Texture{
 	public:
-		Texture(const char* texturePath);
+		Texture(std::string texturePath);
 		~Texture() noexcept;
 		Texture(const Texture& other) = delete;
 		Texture& operator=(const Texture& other) = delete;

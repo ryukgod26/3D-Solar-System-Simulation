@@ -35,14 +35,29 @@ class Game{
 		*/
 
 		Mesh sphereMesh;
+
 		Texture planetTexture;
 		Texture skyboxTexture;
 		Texture sunTexture;
 		Texture mercuryTexture;
+		Texture venusTexture;
+		Texture marsTexture;
+		Texture jupiterTexture;
+		Texture saturnTexture;
+		Texture uranusTexture;
+		Texture neptuneTexture;
+
 		Actor sun;
 		Actor earth;
 		Actor skyBox;
 		Actor mercury;
+		Actor venus;
+		Actor mars;
+		Actor jupiter;
+		Actor saturn;
+		Actor uranus;
+		Actor neptune;
+
 		glm::vec2 lastMousePosition;
 
 /*

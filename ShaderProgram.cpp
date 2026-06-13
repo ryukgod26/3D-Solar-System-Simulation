@@ -6,7 +6,7 @@
 #include <iostream>
 #include <stdexcept>
 
-ShaderProgram::ShaderProgram(const std::string& vertexShaderPath,const std::string& fragmentShaderPath){
+ShaderProgram::ShaderProgram(std::string vertexShaderPath, std::string fragmentShaderPath){
 	std::string vertexCode;
 	std::string fragmentCode;
 	std::ifstream vertexShaderFile;

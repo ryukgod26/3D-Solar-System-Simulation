@@ -5,11 +5,11 @@
 #include <glm/glm.hpp>
 #include "objload.h"
 
-Mesh::Mesh(const char* meshPath){
+Mesh::Mesh(std::string meshPath){
 	std::vector<glm::vec3> vertexPositions;
 	std::vector<glm::vec2> textureCoordinates;
 	std::vector<glm::vec3> normals;
-	loadOBJ(meshPath, vertexPositions, textureCoordinates, normals);
+	loadOBJ(meshPath.c_str(), vertexPositions, textureCoordinates, normals);
 
 	vertexCount = (int)vertexPositions.size();
 	assert(vertexCount >= 3);

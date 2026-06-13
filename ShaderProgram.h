@@ -7,7 +7,7 @@
 
 class ShaderProgram{
 	public:
-		ShaderProgram(const std::string& vertexShaderPath,const std::string& fragmentShaderPath);
+		ShaderProgram(std::string vertexShaderPath,std::string fragmentShaderPath);
 		ShaderProgram(const ShaderProgram& other) = delete;
 		ShaderProgram& operator=(const ShaderProgram& other) = delete;
 		~ShaderProgram() noexcept;

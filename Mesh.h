@@ -1,8 +1,9 @@
 #pragma once
+#include <string>
 
 class Mesh{
 	public:
-		Mesh(const char* meshPath);
+		Mesh(std::string meshPath);
 		Mesh(const Mesh& other) = delete;
 		Mesh& operator=(const Mesh& other) = delete;
 		~Mesh() noexcept;
