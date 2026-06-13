@@ -32,6 +32,8 @@ namespace settings{
 
 	constexpr bool captureMouse = true;
 
+	constexpr float earthOrbitRadius = 300.0f;
+	constexpr float earthScale = 10.0f;
 
 	static_assert(windowWidth > 0 && windowHeight > 0);
 	static_assert(viewportWidth > 0 && viewportHeight > 0);
@@ -71,6 +73,9 @@ namespace settings{
 	inline constexpr int exitKey = 256;
 
 	inline constexpr bool captureMouse = true;
+
+	inline constexpr float earthOrbitRadius = 300.0f;
+	inline constexpr float earthScale = 10.0f;
 
 	static_assert(windowWidth > 0 && windowHeight > 0);
 	static_assert(viewportWidth > 0 && viewportHeight > 0);
