@@ -5,6 +5,8 @@
 #include "Actor.h"
 #include "ShaderProgram.h"
 #include <glm/vec2.hpp>
+#include "Mesh.h"
+#include "Texture.h"
 
 class Window{
 	public:
@@ -14,8 +16,8 @@ class Window{
 		~Window() noexcept;
 
 		void UseShader(const ShaderProgram& shaderProgram);
-		void DrawActor(const Actor& actor);
-		void DrawActor(const Actor& actor, const ShaderProgram& shaderProgram);
+		void DrawActor(const Actor& actor, const Mesh& mesh, const Texture& texture);
+		void DrawActor(const Actor& actor, const Mesh& mesh, const Texture& texture, const ShaderProgram& shaderProgram);
 
 		void SwapBuffers();
 		bool ShouldClose() const;

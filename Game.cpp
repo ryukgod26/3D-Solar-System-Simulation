@@ -8,7 +8,9 @@
 Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int viewportWidth, int viewportHeight,  const std::string title, GLFWmonitor *monitor,GLFWwindow* share) : 
 	window(windowWidth,windowHeight,viewportX,viewportY,viewportWidth,viewportHeight,title,monitor,share),shaderProgram(std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/VertexShader.vert",std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/FragmentShader.frag"), 
 	camera(settings::cameraInitialPosition, {0.0f,1.0f,0.0f}, settings::cameraSpeed, seetings::cameraYaw, settings::cameraPitch, settings::cameraMaxPitch, settings::cameraSensitivity, settings::cameraFOV, settings::screenRatio, settings::cameraNearPlaneDistance, settings::cameraFarPlaneDistance),
-	sunTexture("ResFiles/Textures/sun.jpeg"), planetTexture("ResFiles/Textures/planet.jpeg"), skyboxTexture("ResFiles/Textures/stars.jpeg"), sun("monkey.obj", sunTexture), earth("cube.obj", planetTexture), skyBox("sphere.obj", skyboxTexture),
+	sphereMesh("ResFiles/Meshes/sphere.obj"),
+	sunTexture("ResFiles/Textures/sun.jpeg"), planetTexture("ResFiles/Textures/planet.jpeg"), skyboxTexture("ResFiles/Textures/stars.jpeg"), 
+	//sun("monkey.obj", sunTexture), earth("cube.obj", planetTexture), skyBox("sphere.obj", skyboxTexture),
 {
 	lastMousePosition = window.GetMousePosition();
 	/*
@@ -119,14 +121,14 @@ void Game::Draw()
 
 	//glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
 	shaderProgram.SendUniform<glm::mat4>(matrixID,projection * viewMatrix * sun.GetModelMatrix());
-	window.DrawActor(sun);
+	window.DrawActor(sun, sphereMesh, sunTexture);
 	//glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
 	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * earth.GetModelMatrix());
-	window.DrawActor(earth);
+	window.DrawActor(earth, sphereMesh, planetTexture);
 
 	viewMatrix = glm::mat4(glm::mat3(viewMatrix));
 	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * skyBox.GetModelMatrix());
-	window.DrawActor(skyBox);
+	window.DrawActor(skyBox, sphereMesh, skyboxTexture);
 
 	/*
 	glBindVertexArray(VAO);

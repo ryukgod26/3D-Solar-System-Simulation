@@ -1,16 +1,14 @@
 #pragma once
-#include<vector>
 #include <glm/glm.hpp>
-#include "Texture.h"
 
 class Actor{
 	public:
-		Actor(const char* objectPath, const Texture& texture);
+/*		Actor(const char* objectPath, const Texture& texture);
 		Actor(const Actor& other) = delete;
 		Actor& operator=(const Actor& other) = delete;
-		virtual ~Actor() noexcept;
-		unsigned int GetVAO() const;
-		int GetVertexCount() const;
+		virtual ~Actor() noexcept;*/
+//		unsigned int GetVAO() const;
+//		int GetVertexCount() const;
 
 
 		void ResetModelMatrix();
@@ -18,14 +16,14 @@ class Actor{
 		void ApplyScale(glm::vec3 scale);
 		void ApplyRotation(float degrees, glm::vec3 axis);
 		const glm::mat4& GetModelMatrix() const;
-		const Texture& GetTexture() const;
+//		const Texture& GetTexture() const;
 	private:
 		glm::mat4 modelMatrix = glm::mat4(1.0f);
-		int vertexCount;
+/*		int vertexCount;
 		const Texture& texture;
 
 		unsigned int VAO;
 		unsigned int VBOVertex;
 		unsigned int VBOTexture;
-		unsigned int VBONormals;
+		unsigned int VBONormals;*/
 };

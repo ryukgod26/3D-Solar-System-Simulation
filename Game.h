@@ -7,6 +7,7 @@
 //#include <glm/gtc/matrix_transform.hpp>
 #include "Camera.h"
 #include "Texture.h"
+#include "Mesh.h"
 
 class Game{
 	public:
@@ -33,6 +34,7 @@ class Game{
 		unsigned int VBOColor;
 		*/
 
+		Mesh sphereMesh;
 		Texture planetTexture;
 		Texture skyboxTexture;
 		Texture sunTexture;

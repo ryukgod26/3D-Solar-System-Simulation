@@ -6,6 +6,7 @@
 #include <assert.h>
 #include <glm/gtc/matrix_transform.hpp>
 
+/*
 Actor::Actor(const char* objectPath, const Texture& texture)
 : texture(texture){
 	std::vector<glm::vec3> vertexPositions;
@@ -44,7 +45,9 @@ Actor::~Actor() noexcept {
 	glDeleteBuffers(1, &VBOTexture);
 	glDeleteBuffers(1, &VBONormals);
 }
+*/
 
+/*
 unsigned int Actor::GetVAO() const {
 	return VAO;
 }
@@ -52,6 +55,7 @@ unsigned int Actor::GetVAO() const {
 int Actor::GetVertexCount() const{
 	return vertexCount;
 }
+*/
 
 void Actor::ResetModelMatrix(){
 	modelMatrix = glm::mat4(1.0f);
@@ -73,6 +77,8 @@ const glm::mat4& Actor::GetModelMatrix() const{
 	return modelMatrix;
 }
 
+/*
 const Texture& Actor::GetTexture() const{
 	return texture;
 }
+*/
