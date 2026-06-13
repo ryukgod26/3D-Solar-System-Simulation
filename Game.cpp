@@ -109,7 +109,7 @@ void Game::Update()
 	objActor2.ApplyTranslation(glm::vec3(10.0f,0.0f,0.0f));
 
 	skyBox.ResetModelMatrix();
-	skyBox.ApplyScale(glm::vec3{100.0f});
+	skyBox.ApplyScale(glm::vec3{settings::cameraFarPlaceDistance});
 }
 
 void Game::Draw()
