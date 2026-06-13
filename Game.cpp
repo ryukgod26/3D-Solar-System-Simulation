@@ -114,16 +114,22 @@ void Game::Update()
 	sun.ApplyRotation(float(window.GetElapsedTime() * 5), Camera::worldUp);
 	sun.ApplyScale(glm::vec3(100.0f));
 
+	mercury.resetModelMatrix();
+	mercury.ApplyRotation(float(window.GetElapsedTime()) * 50, Camera::worldUp);
+	mercury.ApplyTranslation({ settings::earthOrbitRadius * 0.6f, 0.0f, 0.0f});
+	mercury.ApplyScale(glm::vec3{ settings::mercuryScale });
+
+	venus.ResetModelMatrix();
+	venus.ApplyRotation(float(window.GetElapsedTime()) * 25, Camera::worldUp);
+	venus.ApplyTranslation(glm::vec3(0.8f,0.0f,0.0f));
+	venus.ApplyScale(settings::venusScale);
+	venus.ApplyRotation(-float(window.GetElapsedTime()) * 30, Camera::worldUp);
+
 	earth.ResetModelMatrix();
 	earth.ApplyTranslation(glm::vec3(0.0f,0.0f,0.0f));
 	earth.ApplyRotation(float(window.GetElapsedTime()) * 20, Camera::worldUp);
 	earth.ApplyScale(settings::earthScale);
 	earth.ApplyRotation(float(window.GetElapsedTime()) * 20, Camera::worldUp);
-
-	mercury.resetModelMatrix();
-	mercury.ApplyRotation(float(window.GetElapsedTime()) * 50, Camera::worldUp);
-	mercury.ApplyTranslation({ settings::earthOrbitRadius * 0.6f, 0.0f, 0.0f});
-	mercury.ApplyScale(glm::vec3{ settings::mercuryScale });
 
 /*	skyBox.ResetModelMatrix();
 	skyBox.ApplyScale(glm::vec3{settings::cameraFarPlaneDistance});*/
@@ -144,11 +150,14 @@ void Game::Draw()
 	shaderProgram.SendUniform<glm::mat4>(matrixID,projection * viewMatrix * sun.GetModelMatrix());
 	window.DrawActor(sun, sphereMesh, sunTexture);
 	//glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
-	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * earth.GetModelMatrix());
-	window.DrawActor(earth, sphereMesh, planetTexture);
-
 	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * mercury.GetModelMatrix());
 	window.DrawActor(mercury, sphereMesh, mercuryTexture);
+
+	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * venus.GetModelMatrix());
+	window.DrawActor(venus, sphereMesh, venusTexture);
+
+	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * earth.GetModelMatrix());
+	window.DrawActor(earth, sphereMesh, planetTexture);
 
 	viewMatrix = glm::mat4(glm::mat3(viewMatrix));
 	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * skyBox.GetModelMatrix());
