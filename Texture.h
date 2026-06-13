@@ -3,6 +3,9 @@
 class Texture{
 	public:
 		Texture(const char* texturePath);
+		~Texture() noexcept;
+		Texture(const Texture& other) = delete;
+		Texture& operator=(const Texture& other) = delete;
 		unsigned int GetID() const;
 		int GetWidth() const;
 		int GetHeight() const;
