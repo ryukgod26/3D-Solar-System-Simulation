@@ -26,6 +26,7 @@ class Window{
 		void PollEvents() const;
 		bool IsKeyPressed(int key) const;
 		glm::vec2 GetMousePosition() const;
+		void Close();
 	private:
 		std::unique_ptr<GLFWwindow, std::function<void(GLFWwindow*)>> window;
 

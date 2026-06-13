@@ -66,6 +66,10 @@ void Game::Update()
 	// unsigned int matrixID = glGetUniformLocation(shaderProgram.GetID(),"Model");
 	// glUniformMatrix4fv(matrixID,1,GL_FALSE,&Model[0][0]);
 
+	if(window.IsKeyPressed(settings::exitKey)){
+		window.Close();
+	}
+
 	glm::vec2 mousePosition = window.GetMousePosition();
 	glm::vec2 cameraRotationOffset{mousePosition.x - lastMousePosition.x, lastMousePosition.y - mousePosition.y};
 	lastMousePosition = mousePosition;

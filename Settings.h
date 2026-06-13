@@ -28,6 +28,7 @@ namespace settings{
 	constexpr int leftKey = 65;
 	constexpr int upKey = 69;
 	constexpr int downKey = 81;
+	constexpr int exitKey = 256;
 
 	constexpr bool captureMouse = true;
 
@@ -67,6 +68,7 @@ namespace settings{
 	inline constexpr int leftKey = 65;
 	inline constexpr int upKey = 69;
 	inline constexpr int downKey = 81;
+	inline constexpr int exitKey = 256;
 
 	inline constexpr bool captureMouse = true;
 

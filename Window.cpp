@@ -92,3 +92,7 @@ glm::vec2 Window::GetMousePosition() const{
 	glfwGetCursorPos(window.get(), &xpos, &ypos);
 	return glm::vec2(xpos, ypos);
 }
+
+void Window::Close() {
+	glfwSetWindowShouldClose(window.get(), true);
+}
