@@ -9,7 +9,7 @@ Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int vie
 	window(windowWidth,windowHeight,viewportX,viewportY,viewportWidth,viewportHeight,title,monitor,share),shaderProgram(std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/VertexShader.vert",std::string(PROJECT_ROOT_DIR) + "/ResFiles/Shaders/FragmentShader.frag"), 
 	camera(settings::cameraInitialPosition, {0.0f,1.0f,0.0f}, settings::cameraSpeed, seetings::cameraYaw, settings::cameraPitch, settings::cameraMaxPitch, settings::cameraSensitivity, settings::cameraFOV, settings::screenRatio, settings::cameraNearPlaneDistance, settings::cameraFarPlaneDistance),
 	sphereMesh("ResFiles/Meshes/sphere.obj"),
-	sunTexture("ResFiles/Textures/sun.jpeg"), planetTexture("ResFiles/Textures/planet.jpeg"), skyboxTexture("ResFiles/Textures/stars.jpeg"), 
+	sunTexture("ResFiles/Textures/sun.jpeg"), planetTexture("ResFiles/Textures/earth.jpeg"), skyboxTexture("ResFiles/Textures/stars.jpeg"), 
 	//sun("monkey.obj", sunTexture), earth("cube.obj", planetTexture), skyBox("sphere.obj", skyboxTexture),
 {
 	lastMousePosition = window.GetMousePosition();
@@ -106,10 +106,10 @@ void Game::Update()
 
 	earth.ResetModelMatrix();
 	earth.ApplyRotation(float(window.GetElapsedTime()) * 90, glm::vec3(0.0f,1.0f,0.0f));
-	objActor2.ApplyTranslation(glm::vec3(10.0f,0.0f,0.0f));
+	earth.ApplyTranslation(glm::vec3(10.0f,0.0f,0.0f));
 
 	skyBox.ResetModelMatrix();
-	skyBox.ApplyScale(glm::vec3{settings::cameraFarPlaceDistance});
+	skyBox.ApplyScale(glm::vec3{settings::cameraFarPlaneDistance});
 }
 
 void Game::Draw()
