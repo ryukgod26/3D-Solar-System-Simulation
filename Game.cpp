@@ -9,18 +9,19 @@ Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int vie
 	window(windowWidth,windowHeight,viewportX,viewportY,viewportWidth,viewportHeight,title,monitor,share),shaderProgram(std::string(PROJECT_ROOT_DIR) + settings::shadersPath +"VertexShader.vert",std::string(PROJECT_ROOT_DIR) + settings::shadersPath + "FragmentShader.frag"), 
 	camera(settings::cameraInitialPosition, settings::cameraSpeed, settings::cameraYaw, settings::cameraPitch, settings::cameraMaxPitch, settings::cameraSensitivity, settings::cameraFOV, settings::screenRatio, settings::cameraNearPlaneDistance, settings::cameraFarPlaneDistance),
 	sphereMesh(std::string(PROJECT_ROOT_DIR) + settings::meshesPath+  "sphere.obj"),
-	sunTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "sun.jpeg"),
+/*	sunTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "sun.jpeg"),
        	planetTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath +"earth.jpeg"), 
 	mercuryTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath +"mercury.jpg"),
-	skyboxTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath +"stars.jpeg"), 
 	venusTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "venus.jpg"),
 	marsTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "mars.jpg"),
 	jupiterTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "jupiter.jpg"),
 	saturnTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "saturn.jpg"),
 	uranusTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "uranus.jpg"),
-	neptuneTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "neptune.jpg"),
+	neptuneTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "neptune.jpg"),*/
 //	earth(settings::earthOrbitRadius, settings::earthScale, 90, 180),
 	//sun("monkey.obj", sunTexture), earth("cube.obj", planetTexture), skyBox("sphere.obj", skyboxTexture),
+	
+	skyboxTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath +"stars.jpeg"), 
 {
 	lastMousePosition = window.GetMousePosition();
 	lastTime = window.GetElapsedTime();
@@ -36,6 +37,17 @@ Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int vie
 	planets.emplace_back(settings::saturnOrbitRadius, settings::saturnScale, settings::saturnOrbitSpeed, settings::saturnRotationSpeed);
 	planets.emplace_back(settings::uranusOrbitRadius, settings::uranusScale, settings::uranusOrbitSpeed, settings::uranusRotationSpeed);
 	planets.emplace_back(settings::neptuneOrbitRadius, settings::neptuneScale, settings::neptuneOrbitSpeed, settings::neptuneRotationSpeed);
+
+
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "sun.jpeg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "venus.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "mercury.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "earth.jpeg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "mars.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "jupiter.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "saturn.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "uranus.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "neptune.jpg");
 	/*
 	std::string objPath = std::string(PROJECT_ROOT_DIR) + "/monkey.obj";
 	if (!loadOBJ(objPath.c_str(),vertexPositions,textureCoordinates,normals)){

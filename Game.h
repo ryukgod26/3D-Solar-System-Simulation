@@ -37,9 +37,8 @@ class Game{
 		*/
 
 		Mesh sphereMesh;
-
+/*
 		Texture planetTexture;
-		Texture skyboxTexture;
 		Texture sunTexture;
 		Texture mercuryTexture;
 		Texture venusTexture;
@@ -48,7 +47,9 @@ class Game{
 		Texture saturnTexture;
 		Texture uranusTexture;
 		Texture neptuneTexture;
-
+*/
+		std::vector<Texture> planetTextures;
+		Texture skyboxTexture;
 		/*
 		Actor sun;
 		Planet earth;
