@@ -136,13 +136,13 @@ void Game::Update(float deltaTime)
 	earth.ApplyRotation(float(window.GetElapsedTime()) * 20, Camera::worldUp);
 	earth.ApplyScale(settings::earthScale);
 	earth.ApplyRotation(float(window.GetElapsedTime()) * 20, Camera::worldUp);*/
-	earth
+	earth.Update(deltaTime);
 
 /*	skyBox.ResetModelMatrix();
 	skyBox.ApplyScale(glm::vec3{settings::cameraFarPlaneDistance});*/
 }
 
-void Game::Draw()
+void Game::Draw(float deltaTime)
 {
 //	glm::mat4 projection = glm::perspective(glm::radians(45.0f), 800.0f/600.0f, 0.1f,100.0f);
 	glm::mat4 projection = camera.GetPerspectiveMatrix();
@@ -155,20 +155,20 @@ void Game::Draw()
 
 	//glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
 	shaderProgram.SendUniform<glm::mat4>(matrixID,projection * viewMatrix * sun.GetModelMatrix());
-	window.DrawActor(sun, sphereMesh, sunTexture);
+	window.DrawActor(sphereMesh, sunTexture);
 	//glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
 	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * mercury.GetModelMatrix());
-	window.DrawActor(mercury, sphereMesh, mercuryTexture);
+	window.DrawActor(sphereMesh, mercuryTexture);
 
 	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * venus.GetModelMatrix());
-	window.DrawActor(venus, sphereMesh, venusTexture);
+	window.DrawActor(sphereMesh, venusTexture);
 
 	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * earth.GetModelMatrix());
-	window.DrawActor(earth, sphereMesh, planetTexture);
+	window.DrawActor(sphereMesh, planetTexture);
 
 	viewMatrix = glm::mat4(glm::mat3(viewMatrix));
 	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * skyBox.GetModelMatrix());
-	window.DrawActor(skyBox, sphereMesh, skyboxTexture);
+	window.DrawActor(sphereMesh, skyboxTexture);
 
 	/*
 	glBindVertexArray(VAO);
