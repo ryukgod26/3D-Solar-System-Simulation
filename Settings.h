@@ -35,8 +35,12 @@ namespace settings{
 	constexpr int upKey = 69;
 	constexpr int downKey = 81;
 	constexpr int exitKey = 256;
+	constexpr int timeSpeedUpKey = 334;
+	constexpr int timeSpeedDownKey = 333;
 
 	constexpr bool captureMouse = true;
+
+	constexpr float timeAdjustSpeed = 0.01f;
 
 	constexpr float earthOrbitRadius = 300.0f;
 	constexpr float earthScale = 10.0f;
@@ -91,8 +95,12 @@ namespace settings{
 	inline constexpr int upKey = 69;
 	inline constexpr int downKey = 81;
 	inline constexpr int exitKey = 256;
+	constexpr int timeSpeedUpKey = 334;
+	constexpr int timeSpeedDownKey = 333;
 
 	inline constexpr bool captureMouse = true;
+
+	inline constexpr float timeAdjustSpeed = 0.01f;
 
 	inline constexpr float earthOrbitRadius = 300.0f;
 

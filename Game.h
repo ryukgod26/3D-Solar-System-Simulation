@@ -67,6 +67,7 @@ class Game{
 		glm::vec2 lastMousePosition;
 
 		float lastTime;
+		float timeSpeed = 1.0f;
 
 /*
 		//camera

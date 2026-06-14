@@ -35,7 +35,7 @@ Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int vie
 	planets.emplace_back(settings::marsOrbitRadius, settings::marsScale, settings::marsOrbitSpeed, settings::marsRotationSpeed);
 	planets.emplace_back(settings::jupiterOrbitRadius, settings::jupiterScale, settings::jupiterOrbitSpeed, settings::jupiterRotationSpeed);
 	planets.emplace_back(settings::saturnOrbitRadius, settings::saturnScale, settings::saturnOrbitSpeed, settings::saturnRotationSpeed);
-	planets.emplace_back(settings::uranusOrbitRadius, settings::uranusScale, settings::uranusOrbitSpeed, settings::uranusRotationSpeed);
+	planets.emplace_back(settings::uranusOrbitRadius, settings::uranusScale, settings::uranusOrbitSpeed, -settings::uranusRotationSpeed);
 	planets.emplace_back(settings::neptuneOrbitRadius, settings::neptuneScale, settings::neptuneOrbitSpeed, settings::neptuneRotationSpeed);
 
 
@@ -80,7 +80,7 @@ Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int vie
 void Game::Tick()
 {
 	float now = window.GetElapsedTime();
-	float deltaTime = lastTine - now;
+	float deltaTime = now - lastTime;
 	lastTime = now;
 
 	window.ClearBuffers();
@@ -115,27 +115,27 @@ void Game::Update(float deltaTime)
 	camera.Rotate(cameraRotationOffset);
 
 	if (window.IsKeyPressed(settings::forwardKey)){
-		camera.ProcessKeyboard(Camera::Movement::FORWARD, 0.016f);
+		camera.ProcessKeyboard(Camera::Movement::FORWARD, deltaTime);
 	}
 
 	if(window.IsKeyPressed(settings::backwardKey)){
-		camera.ProcessKeyboard(Camera::Movement::BACKWARD, 0.016f);
+		camera.ProcessKeyboard(Camera::Movement::BACKWARD, deltaTime);
 	}
 
 	if(window.IsKeyPressed(settings::leftKey)) {
-		camera.ProcessKeyboard(Camera::Movement::LEFT, 0.016f);
+		camera.ProcessKeyboard(Camera::Movement::LEFT, deltaTime);
 	}
 
 	if(window.IsKeyPressed(settings::rightKey)){
-		camera.ProcessKeyboard(Camera::Movement::RIGHT, 0.016f);
+		camera.ProcessKeyboard(Camera::Movement::RIGHT, deltaTime);
 	}
 
 	if(window.IsKeyPressed(settings::upKey)){
-		camera.ProcessKeyboard(Camera::Movement::UP, 0.016f);
+		camera.ProcessKeyboard(Camera::Movement::UP, deltaTime);
 	}
 
 	if(window.IsKeyPressed(settings::downKey)){
-		camera.ProcessKeyboard(Camera::Movement::DOWN, 0.016f)
+		camera.ProcessKeyboard(Camera::Movement::DOWN, deltaTime);
 	}
 
 	sun.ResetModelMatrix();
@@ -161,6 +161,16 @@ void Game::Update(float deltaTime)
 	earth.ApplyRotation(float(window.GetElapsedTime()) * 20, Camera::worldUp);*/
 	earth.Update(deltaTime);
 
+	for(Planet& planet::planets){
+		planet.Update(deltaTime * timeSpeed);
+	}
+
+	
+	if(window.IsKeyPressed(settings::timeSpeedUpKey))
+		timeSpeed += settings::timeAdjustSpeed;
+
+	if(window.IsKeyPressed(settings::timeSpeedDownKey))
+		timeSpeed -= settings::timeAdjustSpeed;
 /*	skyBox.ResetModelMatrix();
 	skyBox.ApplyScale(glm::vec3{settings::cameraFarPlaneDistance});*/
 }
