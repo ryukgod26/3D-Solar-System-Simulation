@@ -107,23 +107,23 @@ namespace settings{
 	inline constexpr float neptuneScale = earthScale * 2.3f;
 
 	inline constexpr float earthOrbitSpeed = 20.0f;
-	inline constexpr float mercuryOrbitSpeed = earthOrbitSpeed * 0.241f;
-	inline constexpr float venusOrbitSpeed = earthOrbitSpeed * 0.616f;
-	inline constexpr float marsOrbitSpeed = earthOrbitSpeed * 1.882f;
-	inline constexpr float jupiterOrbitSpeed = earthOrbitSpeed * 11.87f;
-	inline constexpr float saturnOrbitSpeed = earthOrbitSpeed * 29.476f;
-	inline constexpr float uranusOrbitSpeed = earthOrbitSpeed * 84.073f;
-	inline constexpr float neptuneOrbitSpeed = earthOrbitSpeed * 164.904f;
+	inline constexpr float mercuryOrbitSpeed = earthOrbitSpeed * 4.149f;
+	inline constexpr float venusOrbitSpeed = earthOrbitSpeed * 1.623f;
+	inline constexpr float marsOrbitSpeed = earthOrbitSpeed * 0.531f;
+	inline constexpr float jupiterOrbitSpeed = earthOrbitSpeed * 0.084f;
+	inline constexpr float saturnOrbitSpeed = earthOrbitSpeed * 0.033f;
+	inline constexpr float uranusOrbitSpeed = earthOrbitSpeed * 0.011f;
+	inline constexpr float neptuneOrbitSpeed = earthOrbitSpeed * 0.006f;
 
 	inline constexpr float earthRotationSpeed = 20.0f;
-	inline constexpr float sunRotationSpeed = earthRotationSpeed * 27;
-	inline constexpr float mercuryRotationSpeed = earthRotationSpeed * 0.058f;
-	inline constexpr float venusRotationSpeed = earthRotationSpeed * 0.243f;
-	inline constexpr float marsRotationSpeed = earthRotationSpeed * 1.041f;
-	inline constexpr float jupiterRotationSpeed = earthRotationSpeed * 0.416f;
-	inline constexpr float saturnRotationSpeed = earthRotationSpeed * 0.458f;
-	inline constexpr float uranusRotationSpeed = earthRotationSpeed * 0.708f;
-	inline constexpr float neptuneRotationSpeed = earthRotationSpeed * 0.666f;
+	inline constexpr float sunRotationSpeed = earthRotationSpeed * 0.037;
+	inline constexpr float mercuryRotationSpeed = earthRotationSpeed * 17.241f;
+	inline constexpr float venusRotationSpeed = earthRotationSpeed * 4.115f;
+	inline constexpr float marsRotationSpeed = earthRotationSpeed * 0.960f;
+	inline constexpr float jupiterRotationSpeed = earthRotationSpeed * 2.403f;
+	inline constexpr float saturnRotationSpeed = earthRotationSpeed * 2.183f;
+	inline constexpr float uranusRotationSpeed = earthRotationSpeed * 1.412f;
+	inline constexpr float neptuneRotationSpeed = earthRotationSpeed * 1.501f;
 
 	static_assert(windowWidth > 0 && windowHeight > 0);
 	static_assert(viewportWidth > 0 && viewportHeight > 0);
