@@ -30,7 +30,7 @@ Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int vie
 	planets.emplace_back(0, settings::sunScale, 0, settings::sunRotationSpeed);
 
 	planets.emplace_back(settings::mercuryOrbitRadius, settings::mercuryScale, settings::mercuryOrbitSpeed, settings::mercuryRotationSpeed);
-	planets.emplace_back(settings::venusOrbitRadius, settings::venusScale, settings::venusOrbitSpeed, settings::venusRotationSpeed);
+	planets.emplace_back(settings::venusOrbitRadius, settings::venusScale, settings::venusOrbitSpeed, -settings::venusRotationSpeed);
 	planets.emplace_back(settings::earthOrbitRadius, settings::earthScale, settings::earthOrbitSpeed, settings::earthRotationSpeed);
 	planets.emplace_back(settings::marsOrbitRadius, settings::marsScale, settings::marsOrbitSpeed, settings::marsRotationSpeed);
 	planets.emplace_back(settings::jupiterOrbitRadius, settings::jupiterScale, settings::jupiterOrbitSpeed, settings::jupiterRotationSpeed);
