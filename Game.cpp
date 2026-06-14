@@ -19,12 +19,23 @@ Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int vie
 	saturnTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "saturn.jpg"),
 	uranusTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "uranus.jpg"),
 	neptuneTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "neptune.jpg"),
-	earth(settings::earthOrbitRadius, settings::earthScale, 90, 180),
+//	earth(settings::earthOrbitRadius, settings::earthScale, 90, 180),
 	//sun("monkey.obj", sunTexture), earth("cube.obj", planetTexture), skyBox("sphere.obj", skyboxTexture),
 {
 	lastMousePosition = window.GetMousePosition();
 	lastTime = window.GetElapsedTime();
 	skybox.ApplyScale(glm::vec3{ settings::cameraFarPlaneDistance });
+
+	planets.emplace_back(0, settings::sunScale, 0, settings::sunRotationSpeed);
+
+	planets.emplace_back(settings::mercuryOrbitRadius, settings::mercuryScale, settings::mercuryOrbitSpeed, settings::mercuryRotationSpeed);
+	planets.emplace_back(settings::venusOrbitRadius, settings::venusScale, settings::venusOrbitSpeed, settings::venusRotationSpeed);
+	planets.emplace_back(settings::earthOrbitRadius, settings::earthScale, settings::earthOrbitSpeed, settings::earthRotationSpeed);
+	planets.emplace_back(settings::marsOrbitRadius, settings::marsScale, settings::marsOrbitSpeed, settings::marsRotationSpeed);
+	planets.emplace_back(settings::jupiterOrbitRadius, settings::jupiterScale, settings::jupiterOrbitSpeed, settings::jupiterRotationSpeed);
+	planets.emplace_back(settings::saturnOrbitRadius, settings::saturnScale, settings::saturnOrbitSpeed, settings::saturnRotationSpeed);
+	planets.emplace_back(settings::uranusOrbitRadius, settings::uranusScale, settings::uranusOrbitSpeed, settings::uranusRotationSpeed);
+	planets.emplace_back(settings::neptuneOrbitRadius, settings::neptuneScale, settings::neptuneOrbitSpeed, settings::neptuneRotationSpeed);
 	/*
 	std::string objPath = std::string(PROJECT_ROOT_DIR) + "/monkey.obj";
 	if (!loadOBJ(objPath.c_str(),vertexPositions,textureCoordinates,normals)){

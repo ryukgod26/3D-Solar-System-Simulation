@@ -9,6 +9,7 @@
 #include "Texture.h"
 #include "Mesh.h"
 #include "Planet.h"
+#include <vector>
 
 class Game{
 	public:
@@ -48,6 +49,7 @@ class Game{
 		Texture uranusTexture;
 		Texture neptuneTexture;
 
+		/*
 		Actor sun;
 		Planet earth;
 		Actor skyBox;
@@ -57,7 +59,9 @@ class Game{
 		Actor jupiter;
 		Actor saturn;
 		Actor uranus;
-		Actor neptune;
+		Actor neptune;*/
+
+		std::vector<Planet> planets;
 
 		glm::vec2 lastMousePosition;
 
