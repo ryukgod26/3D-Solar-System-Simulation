@@ -8,6 +8,7 @@
 #include "Camera.h"
 #include "Texture.h"
 #include "Mesh.h"
+#include "Planet.h"
 
 class Game{
 	public:
@@ -19,8 +20,8 @@ class Game{
 		bool ShouldClose() const;
 	
 	private:
-		void Update();
-		void Draw();
+		void Update(float deltaTime);
+		void Draw(float deltaTime);
 		Window window;
 		ShaderProgram shaderProgram;
 		Camera camera;
@@ -48,7 +49,7 @@ class Game{
 		Texture neptuneTexture;
 
 		Actor sun;
-		Actor earth;
+		Planet earth;
 		Actor skyBox;
 		Actor mercury;
 		Actor venus;
@@ -59,6 +60,8 @@ class Game{
 		Actor neptune;
 
 		glm::vec2 lastMousePosition;
+
+		float lastTime;
 
 /*
 		//camera

@@ -19,9 +19,11 @@ Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int vie
 	saturnTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "saturn.jpg"),
 	uranusTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "uranus.jpg"),
 	neptuneTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "neptune.jpg"),
+	earth(settings::earthOrbitRadius, settings::earthScale, 90, 180),
 	//sun("monkey.obj", sunTexture), earth("cube.obj", planetTexture), skyBox("sphere.obj", skyboxTexture),
 {
 	lastMousePosition = window.GetMousePosition();
+	lastTime = window.GetElapsedTime();
 	skybox.ApplyScale(glm::vec3{ settings::cameraFarPlaneDistance });
 	/*
 	std::string objPath = std::string(PROJECT_ROOT_DIR) + "/monkey.obj";
@@ -54,9 +56,13 @@ Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int vie
 
 void Game::Tick()
 {
+	float now = window.GetElapsedTime();
+	float deltaTime = lastTine - now;
+	lastTime = now;
+
 	window.ClearBuffers();
-	Update();
-	Draw();
+	Update(deltaTime);
+	Draw(deltaTime);
 	window.SwapBuffers();
 	window.glfwPollEvents();
 }
@@ -66,7 +72,7 @@ bool Game::ShouldClose() const
 	return window.ShouldClose();
 }
 
-void Game::Update()
+void Game::Update(float deltaTime)
 {
 	// Model = glm::mat4(1.0f);
 	// Model = glm::translate(Model,glm::vec3(0.0f,0.0f,0.0f));
@@ -124,12 +130,13 @@ void Game::Update()
 	venus.ApplyTranslation(glm::vec3(0.8f,0.0f,0.0f));
 	venus.ApplyScale(settings::venusScale);
 	venus.ApplyRotation(-float(window.GetElapsedTime()) * 30, Camera::worldUp);
-
+/*
 	earth.ResetModelMatrix();
 	earth.ApplyTranslation(glm::vec3(0.0f,0.0f,0.0f));
 	earth.ApplyRotation(float(window.GetElapsedTime()) * 20, Camera::worldUp);
 	earth.ApplyScale(settings::earthScale);
-	earth.ApplyRotation(float(window.GetElapsedTime()) * 20, Camera::worldUp);
+	earth.ApplyRotation(float(window.GetElapsedTime()) * 20, Camera::worldUp);*/
+	earth
 
 /*	skyBox.ResetModelMatrix();
 	skyBox.ApplyScale(glm::vec3{settings::cameraFarPlaneDistance});*/

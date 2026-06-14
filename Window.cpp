@@ -51,16 +51,16 @@ void Window::UseShader(const ShaderProgram& shaderProgram) {
 	glUseProgram(shaderProgram.GetID());
 }
 
-void Window::DrawActor(const Actor& actor, const Mesh& mesh, const Texture& texture){
+void Window::DrawActor(const Mesh& mesh, const Texture& texture){
 	glActiveTexture(GL_TEXTURED);
 	glBindTexture(GL_TEXTURE_2D, texture.GetID());
 	glBindVertexArray(mesh.GetVAO());
 	glDrawArrays(GL_TRIANGLES, 0, mesh.GetVertexCount());
 }
 
-void Window::DrawActor(const Actor& actor, const Mesh& mesh, const Texture& texture, const ShaderProgram& shaderProgram){
+void Window::DrawActor(const Mesh& mesh, const Texture& texture, const ShaderProgram& shaderProgram){
 	UseShader(shaderProgram);
-	DrawActor(actor, mesh, texture);
+	DrawActor(mesh, texture);
 }
 
 void Window::SwapBuffers(){
@@ -75,8 +75,8 @@ void Window::ClearBuffers(){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-double Window::GetElapsedTime() const {
-	return glfwGetTime();
+float Window::GetElapsedTime() const {
+	return (float)glfwGetTime();
 }
 
 void Window::PollEvents() const {

@@ -24,5 +24,7 @@ void Planet::Update(float deltaTime) {
 
 	ResetModelMatrix();
 	ApplyRotation(currentOrbitDegrees, {0.0f,1.0f,0.0f});
-	ApplyTranslation();
+	ApplyTranslation({orbitRadius, 0.0f, 0.0f});
+	ApplyScale(glm::vec3{ scale });
+	ApplyRotation(currentRotationDegrees, {0.0f, 1.0f, 0.0f});
 }

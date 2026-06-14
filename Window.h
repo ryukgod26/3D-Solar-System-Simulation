@@ -16,13 +16,13 @@ class Window{
 		~Window() noexcept;
 
 		void UseShader(const ShaderProgram& shaderProgram);
-		void DrawActor(const Actor& actor, const Mesh& mesh, const Texture& texture);
-		void DrawActor(const Actor& actor, const Mesh& mesh, const Texture& texture, const ShaderProgram& shaderProgram);
+		void DrawActor(const Mesh& mesh, const Texture& texture);
+		void DrawActor(const Mesh& mesh, const Texture& texture, const ShaderProgram& shaderProgram);
 
 		void SwapBuffers();
 		bool ShouldClose() const;
 		void ClearBuffers();
-		double GetElapsedTime() const;
+		float GetElapsedTime() const;
 		void PollEvents() const;
 		bool IsKeyPressed(int key) const;
 		glm::vec2 GetMousePosition() const;
