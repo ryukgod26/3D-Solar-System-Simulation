@@ -1,6 +1,8 @@
 #include "Camera.h"
 #include <glm/gtc/matrix_transform.hpp>
 
+const glm::vec3 Camera::worldUp = glm::vec3(0.0f, 1.0f, 0.0f);
+
 Camera::Camera(glm::vec3 position, float movementSpeed, float yaw, float pitch, float maxPitch, float mouseSensitivity, float zoom, float screenRatio, float nearPlaneDistance, float farPlaneDistance) : 
 	position(position),
 //	front(glm::vec3(0.0f, 0.0f, -1.0f)),
@@ -15,7 +17,7 @@ Camera::Camera(glm::vec3 position, float movementSpeed, float yaw, float pitch, 
 	nearPlaneDistance(nearPlaneDistance),
 	farPlaneDistance(farPlaneDistance)
 {
-	UpdateCameraVectors():
+	UpdateCameraVectors();
 }
 
 void Camera::ProcessKeyboard(Movement direction, float deltaTime){

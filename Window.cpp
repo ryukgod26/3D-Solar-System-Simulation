@@ -34,7 +34,9 @@ window(nullptr,[](GLFWwindow* window){glfwDestroyWindow(window);}){
 	glClearColor(0.2f,0.3f,0.4f,1.0f);
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
-	if constexpr (settings::captureMouse) {
+
+	// if constexpr (settings::captureMouse) {
+	if (settings::captureMouse){
 		glfwSetInputMode(window.get(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	}
 	glfwSetFramebufferSizeCallback(window.get(),[](GLFWwindow* window,int width, int height){glViewport(0,0,width,height);});
@@ -52,7 +54,7 @@ void Window::UseShader(const ShaderProgram& shaderProgram) {
 }
 
 void Window::DrawActor(const Mesh& mesh, const Texture& texture){
-	glActiveTexture(GL_TEXTURED);
+	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture.GetID());
 	glBindVertexArray(mesh.GetVAO());
 	glDrawArrays(GL_TRIANGLES, 0, mesh.GetVertexCount());
@@ -83,7 +85,7 @@ void Window::PollEvents() const {
 	glfwPollEvents();
 }
 
-bool IsKeyPressed(int key) const{
+bool Window::IsKeyPressed(int key) const{
 	return glfwGetKey(window.get(), key) == GLFW_PRESS;
 }
 

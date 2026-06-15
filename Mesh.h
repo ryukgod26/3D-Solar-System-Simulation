@@ -16,4 +16,4 @@ class Mesh{
 		unsigned int VBOVertex;
 		unsigned int VBOTexture;
 		unsigned int VBONormals;
-}
+};

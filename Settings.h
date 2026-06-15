@@ -27,7 +27,7 @@ namespace settings{
 	constexpr float cameraNearPlaneDistance = 0.3f;
 	constexpr float cameraFarPlaneDistance = 10000.0f;         
 	constexpr float screenRatio = float(windowWidth) / float(windowHeight);
-	constexpr glm::vec3 cameraInitialPosition = { 0.0f,0.0f,150.0f };
+	const glm::vec3 cameraInitialPosition = { 0.0f,0.0f,150.0f };
 	constexpr int forwardKey = 87;
 	constexpr int backwardKey = 83;
 	constexpr int rightKey = 68;
@@ -43,6 +43,14 @@ namespace settings{
 	constexpr float timeAdjustSpeed = 0.01f;
 
 	constexpr float earthOrbitRadius = 300.0f;
+	constexpr float mercuryOrbitRadius = earthOrbitRadius * 0.6f;
+	constexpr float venusOrbitRadius = earthOrbitRadius * 0.8f;
+	constexpr float marsOrbitRadius = earthOrbitRadius * 1.3f;
+	constexpr float jupiterOrbitRadius = earthOrbitRadius * 1.6f;
+	constexpr float saturnOrbitRadius = earthOrbitRadius * 2.3f;
+	constexpr float uranusOrbitRadius = earthOrbitRadius * 2.6f;
+	constexpr float neptuneOrbitRadius = earthOrbitRadius * 3.3f;
+
 	constexpr float earthScale = 10.0f;
 	constexpr float sunScale = 100.0f;
 	constexpr float mercuryScale = earthScale * 0.3f;
@@ -53,6 +61,24 @@ namespace settings{
 	constexpr float uranusScale = earthScale * 2.5f;
 	constexpr float neptuneScale = earthScale * 2.3f;
 
+	constexpr float earthRotationSpeed = 20.0f;
+	constexpr float sunRotationSpeed = earthRotationSpeed * 0.037;
+	constexpr float mercuryRotationSpeed = earthRotationSpeed * 17.241f;
+	constexpr float venusRotationSpeed = earthRotationSpeed * 4.115f;
+	constexpr float marsRotationSpeed = earthRotationSpeed * 0.960f;
+	constexpr float jupiterRotationSpeed = earthRotationSpeed * 2.403f;
+	constexpr float saturnRotationSpeed = earthRotationSpeed * 2.183f;
+	constexpr float uranusRotationSpeed = earthRotationSpeed * 1.412f;
+	constexpr float neptuneRotationSpeed = earthRotationSpeed * 1.501f;
+
+	constexpr float earthOrbitSpeed = 20.0f;
+	constexpr float mercuryOrbitSpeed = earthOrbitSpeed * 4.149f;
+	constexpr float venusOrbitSpeed = earthOrbitSpeed * 1.623f;
+	constexpr float marsOrbitSpeed = earthOrbitSpeed * 0.531f;
+	constexpr float jupiterOrbitSpeed = earthOrbitSpeed * 0.084f;
+	constexpr float saturnOrbitSpeed = earthOrbitSpeed * 0.033f;
+	constexpr float uranusOrbitSpeed = earthOrbitSpeed * 0.011f;
+	constexpr float neptuneOrbitSpeed = earthOrbitSpeed * 0.006f;
 
 	static_assert(windowWidth > 0 && windowHeight > 0);
 	static_assert(viewportWidth > 0 && viewportHeight > 0);
@@ -103,6 +129,13 @@ namespace settings{
 	inline constexpr float timeAdjustSpeed = 0.01f;
 
 	inline constexpr float earthOrbitRadius = 300.0f;
+	inline constexpr float mercuryOrbitRadius = earthOrbitRadius * 0.6f;
+	inline constexpr float venusOrbitRadius = earthOrbitRadius * 0.8f;
+	inline constexpr float marsOrbitRadius = earthOrbitRadius * 1.3f;
+	inline constexpr float jupiterOrbitRadius = earthOrbitRadius * 1.6f;
+	inline constexpr float saturnOrbitRadius = earthOrbitRadius * 2.3f;
+	inline constexpr float uranusOrbitRadius = earthOrbitRadius * 2.6f;
+	inline constexpr float neptuneOrbitRadius = earthOrbitRadius * 3.3f;
 
 	inline constexpr float earthScale = 10.0f;
 	inline constexpr float sunScale = 100.0f;

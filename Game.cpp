@@ -21,11 +21,11 @@ Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int vie
 //	earth(settings::earthOrbitRadius, settings::earthScale, 90, 180),
 	//sun("monkey.obj", sunTexture), earth("cube.obj", planetTexture), skyBox("sphere.obj", skyboxTexture),
 	
-	skyboxTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath +"stars.jpeg"), 
+	skyboxTexture(std::string(PROJECT_ROOT_DIR) + settings::texturePath +"stars.jpeg")
 {
 	lastMousePosition = window.GetMousePosition();
 	lastTime = window.GetElapsedTime();
-	skybox.ApplyScale(glm::vec3{ settings::cameraFarPlaneDistance });
+	skyBox.ApplyScale(glm::vec3{ settings::cameraFarPlaneDistance });
 
 	planets.emplace_back(0, settings::sunScale, 0, settings::sunRotationSpeed);
 
@@ -38,16 +38,15 @@ Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int vie
 	planets.emplace_back(settings::uranusOrbitRadius, settings::uranusScale, settings::uranusOrbitSpeed, -settings::uranusRotationSpeed);
 	planets.emplace_back(settings::neptuneOrbitRadius, settings::neptuneScale, settings::neptuneOrbitSpeed, settings::neptuneRotationSpeed);
 
-
-	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "sun.jpeg");
-	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "venus.jpg");
-	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "mercury.jpg");
-	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "earth.jpeg");
-	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "mars.jpg");
-	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "jupiter.jpg");
-	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "saturn.jpg");
-	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "uranus.jpg");
-	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "neptune.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturePath + "sun.jpeg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturePath + "venus.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturePath + "mercury.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturePath + "earth.jpeg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturePath + "mars.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturePath + "jupiter.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturePath + "saturn.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturePath + "uranus.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturePath + "neptune.jpg");
 	/*
 	std::string objPath = std::string(PROJECT_ROOT_DIR) + "/monkey.obj";
 	if (!loadOBJ(objPath.c_str(),vertexPositions,textureCoordinates,normals)){
@@ -73,9 +72,8 @@ Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int vie
 
 /*	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);*/
-	
 
-}
+	}
 
 void Game::Tick()
 {
@@ -87,7 +85,7 @@ void Game::Tick()
 	Update(deltaTime);
 	Draw(deltaTime);
 	window.SwapBuffers();
-	window.glfwPollEvents();
+	window.PollEvents();
 }
 
 bool Game::ShouldClose() const
@@ -138,30 +136,30 @@ void Game::Update(float deltaTime)
 		camera.ProcessKeyboard(Camera::Movement::DOWN, deltaTime);
 	}
 
-	sun.ResetModelMatrix();
-//	sun.ApplyTranslation(glm::vec3(0.0f,0.0f,0.0f));
-	sun.ApplyRotation(float(window.GetElapsedTime() * 5), Camera::worldUp);
-	sun.ApplyScale(glm::vec3(100.0f));
+// 	sun.ResetModelMatrix();
+// //	sun.ApplyTranslation(glm::vec3(0.0f,0.0f,0.0f));
+// 	sun.ApplyRotation(float(window.GetElapsedTime() * 5), Camera::worldUp);
+// 	sun.ApplyScale(glm::vec3(100.0f));
 
-	mercury.resetModelMatrix();
-	mercury.ApplyRotation(float(window.GetElapsedTime()) * 50, Camera::worldUp);
-	mercury.ApplyTranslation({ settings::earthOrbitRadius * 0.6f, 0.0f, 0.0f});
-	mercury.ApplyScale(glm::vec3{ settings::mercuryScale });
+// 	mercury.resetModelMatrix();
+// 	mercury.ApplyRotation(float(window.GetElapsedTime()) * 50, Camera::worldUp);
+// 	mercury.ApplyTranslation({ settings::earthOrbitRadius * 0.6f, 0.0f, 0.0f});
+// 	mercury.ApplyScale(glm::vec3{ settings::mercuryScale });
 
-	venus.ResetModelMatrix();
-	venus.ApplyRotation(float(window.GetElapsedTime()) * 25, Camera::worldUp);
-	venus.ApplyTranslation(glm::vec3(0.8f,0.0f,0.0f));
-	venus.ApplyScale(settings::venusScale);
-	venus.ApplyRotation(-float(window.GetElapsedTime()) * 30, Camera::worldUp);
-/*
-	earth.ResetModelMatrix();
-	earth.ApplyTranslation(glm::vec3(0.0f,0.0f,0.0f));
-	earth.ApplyRotation(float(window.GetElapsedTime()) * 20, Camera::worldUp);
-	earth.ApplyScale(settings::earthScale);
-	earth.ApplyRotation(float(window.GetElapsedTime()) * 20, Camera::worldUp);*/
-	earth.Update(deltaTime);
+// 	venus.ResetModelMatrix();
+// 	venus.ApplyRotation(float(window.GetElapsedTime()) * 25, Camera::worldUp);
+// 	venus.ApplyTranslation(glm::vec3(0.8f,0.0f,0.0f));
+// 	venus.ApplyScale(settings::venusScale);
+// 	venus.ApplyRotation(-float(window.GetElapsedTime()) * 30, Camera::worldUp);
+// /*
+// 	earth.ResetModelMatrix();
+// 	earth.ApplyTranslation(glm::vec3(0.0f,0.0f,0.0f));
+// 	earth.ApplyRotation(float(window.GetElapsedTime()) * 20, Camera::worldUp);
+// 	earth.ApplyScale(settings::earthScale);
+// 	earth.ApplyRotation(float(window.GetElapsedTime()) * 20, Camera::worldUp);*/
+// 	earth.Update(deltaTime);
 
-	for(Planet& planet::planets){
+	for(Planet& planet : planets){
 		planet.Update(deltaTime * timeSpeed);
 	}
 
@@ -186,22 +184,32 @@ void Game::Draw(float deltaTime)
 	window.UseShader(shaderProgram);
 	unsigned int matrixID = shaderProgram.GetUniformID("MVP");
 
-	//glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
-	shaderProgram.SendUniform<glm::mat4>(matrixID,projection * viewMatrix * sun.GetModelMatrix());
-	window.DrawActor(sphereMesh, sunTexture);
-	//glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
-	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * mercury.GetModelMatrix());
-	window.DrawActor(sphereMesh, mercuryTexture);
 
-	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * venus.GetModelMatrix());
-	window.DrawActor(sphereMesh, venusTexture);
-
-	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * earth.GetModelMatrix());
-	window.DrawActor(sphereMesh, planetTexture);
+	for(int i =0; i < planets.size(); i++){
+		shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * planets[i].GetModelMatrix());
+		window.DrawActor(sphereMesh, planetTextures[i]);
+	}
 
 	viewMatrix = glm::mat4(glm::mat3(viewMatrix));
 	shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * skyBox.GetModelMatrix());
 	window.DrawActor(sphereMesh, skyboxTexture);
+
+	// //glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
+	// shaderProgram.SendUniform<glm::mat4>(matrixID,projection * viewMatrix * sun.GetModelMatrix());
+	// window.DrawActor(sphereMesh, sunTexture);
+	// //glUniformMatrix4fv(matrixID, 1, GL_FALSE, &Model1[0][0]);
+	// shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * mercury.GetModelMatrix());
+	// window.DrawActor(sphereMesh, mercuryTexture);
+
+	// shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * venus.GetModelMatrix());
+	// window.DrawActor(sphereMesh, venusTexture);
+
+	// shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * earth.GetModelMatrix());
+	// window.DrawActor(sphereMesh, planetTexture);
+
+	// viewMatrix = glm::mat4(glm::mat3(viewMatrix));
+	// shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * skyBox.GetModelMatrix());
+	// window.DrawActor(sphereMesh, skyboxTexture);
 
 	/*
 	glBindVertexArray(VAO);

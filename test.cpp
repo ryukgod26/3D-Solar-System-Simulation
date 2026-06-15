@@ -1,5 +1,6 @@
 #define GL_GLEXT_PROTOTYPES
 
+#include <glad/glad.h>
 #include<GLFW/glfw3.h>
 #include<iostream>
 
@@ -31,6 +32,12 @@ int main() {
 		return -1;
 	}
 	glfwMakeContextCurrent(window);
+
+	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+		std::cout << "Failed to initialize GLAD" << std::endl;
+		glfwTerminate();
+		return -1;
+	}
 
 	unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
 	glShaderSource(vertexShader,1,&vertexShaderSource,NULL);

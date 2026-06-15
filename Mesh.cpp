@@ -2,8 +2,9 @@
 #include <glad/glad.h>
 #include <glfw3.h>
 #include <vector>
-#include <glm/glm.hpp>
+#include <vector>
 #include "objload.h"
+#include "glm.hpp"
 
 Mesh::Mesh(std::string meshPath){
 	std::vector<glm::vec3> vertexPositions;
@@ -34,7 +35,8 @@ Mesh::Mesh(std::string meshPath){
 	glEnableVertexAttribArray(2);
 }
 
-Mesb::~Mesh() noexcept{
+
+Mesh::~Mesh() noexcept{
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBOVertex);
 	glDeleteBuffers(1, &VBOTexture);

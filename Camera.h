@@ -3,7 +3,7 @@
 
 class Camera{
 	public:
-		static constexpr glm::vec3 worldUp = {0.0f, 1.0f, 0.0f};
+		static const glm::vec3 worldUp;
 		enum class Movement{
 			FORWARD,
 			BACKWARD,
@@ -27,6 +27,7 @@ class Camera{
 		// Euler Angles
 		float yaw;
 		float pitch;
+		float maxPitch;
 
 		float movementSpeed;
 		float mouseSensitivity;
@@ -35,5 +36,7 @@ class Camera{
 		float screenRatio;
 		float nearPlaneDistance;
 		float farPlaneDistance;
+
+		void UpdateCameraVectors();
 
 };

@@ -53,7 +53,6 @@ class Game{
 		/*
 		Actor sun;
 		Planet earth;
-		Actor skyBox;
 		Actor mercury;
 		Actor venus;
 		Actor mars;
@@ -61,6 +60,7 @@ class Game{
 		Actor saturn;
 		Actor uranus;
 		Actor neptune;*/
+		Actor skyBox;
 
 		std::vector<Planet> planets;
 
