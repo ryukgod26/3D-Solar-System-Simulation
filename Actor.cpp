@@ -2,7 +2,7 @@
 #include "objload.h"
 #include <glm/glm.hpp>
 #include <glad/glad.h>
-#include <glfw3.h>
+#include <GLFW/glfw3.h>
 #include <assert.h>
 #include <glm/gtc/matrix_transform.hpp>
 

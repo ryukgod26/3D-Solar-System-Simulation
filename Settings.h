@@ -6,9 +6,9 @@
 
 namespace settings{
 
-	std::string texturePath = "ResFiles/Textures/";
-	std::string meshesPath = "ResFiles/Meshes/";
-	std::string shadersPath = "ResFiles/Shaders/";
+	extern std::string texturePath;
+	extern std::string meshesPath;
+	extern std::string shadersPath;
 
 	constexpr int windowWidth = 1280;
 	constexpr int windowHeight = 720;
@@ -91,9 +91,9 @@ namespace settings{
 #else
 namespace settings{
 
-	inline std::string texturePath = "ResFiles/Textures/";
-	inline std::string meshesPath = "ResFiles/Meshes/";
-	inline std::string shadersPath = "ResFiles/Shaders/";
+	extern std::string texturePath;
+	extern std::string meshesPath;
+	extern std::string shadersPath;
 
 	inline constexpr int windowWidth = 1280;
 	inline constexpr int windowHeight = 720;
