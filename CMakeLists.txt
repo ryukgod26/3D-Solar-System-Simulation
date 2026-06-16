@@ -24,6 +24,13 @@ add_executable(
     Game.cpp
     Window.cpp
     ShaderProgram.cpp
+    Camera.cpp
+    Mesh.cpp
+    Texture.cpp
+    Planet.cpp
+    Actor.cpp
+    objload.cpp
+    stb_image.cpp
     glad.c
 )
 

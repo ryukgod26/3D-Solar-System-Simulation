@@ -589,6 +589,54 @@ windows/fast:
 	$(MAKE) $(MAKESILENT) -f _deps\glfw-build\tests\CMakeFiles\windows.dir\build.make _deps/glfw-build/tests/CMakeFiles/windows.dir/build
 .PHONY : windows/fast
 
+Actor.obj: Actor.cpp.obj
+.PHONY : Actor.obj
+
+# target to build an object file
+Actor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/Actor.cpp.obj
+.PHONY : Actor.cpp.obj
+
+Actor.i: Actor.cpp.i
+.PHONY : Actor.i
+
+# target to preprocess a source file
+Actor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/Actor.cpp.i
+.PHONY : Actor.cpp.i
+
+Actor.s: Actor.cpp.s
+.PHONY : Actor.s
+
+# target to generate assembly for a file
+Actor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/Actor.cpp.s
+.PHONY : Actor.cpp.s
+
+Camera.obj: Camera.cpp.obj
+.PHONY : Camera.obj
+
+# target to build an object file
+Camera.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/Camera.cpp.obj
+.PHONY : Camera.cpp.obj
+
+Camera.i: Camera.cpp.i
+.PHONY : Camera.i
+
+# target to preprocess a source file
+Camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/Camera.cpp.i
+.PHONY : Camera.cpp.i
+
+Camera.s: Camera.cpp.s
+.PHONY : Camera.s
+
+# target to generate assembly for a file
+Camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/Camera.cpp.s
+.PHONY : Camera.cpp.s
+
 Game.obj: Game.cpp.obj
 .PHONY : Game.obj
 
@@ -613,6 +661,54 @@ Game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/Game.cpp.s
 .PHONY : Game.cpp.s
 
+Mesh.obj: Mesh.cpp.obj
+.PHONY : Mesh.obj
+
+# target to build an object file
+Mesh.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/Mesh.cpp.obj
+.PHONY : Mesh.cpp.obj
+
+Mesh.i: Mesh.cpp.i
+.PHONY : Mesh.i
+
+# target to preprocess a source file
+Mesh.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/Mesh.cpp.i
+.PHONY : Mesh.cpp.i
+
+Mesh.s: Mesh.cpp.s
+.PHONY : Mesh.s
+
+# target to generate assembly for a file
+Mesh.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/Mesh.cpp.s
+.PHONY : Mesh.cpp.s
+
+Planet.obj: Planet.cpp.obj
+.PHONY : Planet.obj
+
+# target to build an object file
+Planet.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/Planet.cpp.obj
+.PHONY : Planet.cpp.obj
+
+Planet.i: Planet.cpp.i
+.PHONY : Planet.i
+
+# target to preprocess a source file
+Planet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/Planet.cpp.i
+.PHONY : Planet.cpp.i
+
+Planet.s: Planet.cpp.s
+.PHONY : Planet.s
+
+# target to generate assembly for a file
+Planet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/Planet.cpp.s
+.PHONY : Planet.cpp.s
+
 ShaderProgram.obj: ShaderProgram.cpp.obj
 .PHONY : ShaderProgram.obj
 
@@ -636,6 +732,30 @@ ShaderProgram.s: ShaderProgram.cpp.s
 ShaderProgram.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/ShaderProgram.cpp.s
 .PHONY : ShaderProgram.cpp.s
+
+Texture.obj: Texture.cpp.obj
+.PHONY : Texture.obj
+
+# target to build an object file
+Texture.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/Texture.cpp.obj
+.PHONY : Texture.cpp.obj
+
+Texture.i: Texture.cpp.i
+.PHONY : Texture.i
+
+# target to preprocess a source file
+Texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/Texture.cpp.i
+.PHONY : Texture.cpp.i
+
+Texture.s: Texture.cpp.s
+.PHONY : Texture.s
+
+# target to generate assembly for a file
+Texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/Texture.cpp.s
+.PHONY : Texture.cpp.s
 
 Window.obj: Window.cpp.obj
 .PHONY : Window.obj
@@ -709,6 +829,54 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+objload.obj: objload.cpp.obj
+.PHONY : objload.obj
+
+# target to build an object file
+objload.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/objload.cpp.obj
+.PHONY : objload.cpp.obj
+
+objload.i: objload.cpp.i
+.PHONY : objload.i
+
+# target to preprocess a source file
+objload.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/objload.cpp.i
+.PHONY : objload.cpp.i
+
+objload.s: objload.cpp.s
+.PHONY : objload.s
+
+# target to generate assembly for a file
+objload.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/objload.cpp.s
+.PHONY : objload.cpp.s
+
+stb_image.obj: stb_image.cpp.obj
+.PHONY : stb_image.obj
+
+# target to build an object file
+stb_image.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/stb_image.cpp.obj
+.PHONY : stb_image.cpp.obj
+
+stb_image.i: stb_image.cpp.i
+.PHONY : stb_image.i
+
+# target to preprocess a source file
+stb_image.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/stb_image.cpp.i
+.PHONY : stb_image.cpp.i
+
+stb_image.s: stb_image.cpp.s
+.PHONY : stb_image.s
+
+# target to generate assembly for a file
+stb_image.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SolarSystem.dir\build.make CMakeFiles/SolarSystem.dir/stb_image.cpp.s
+.PHONY : stb_image.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -754,12 +922,27 @@ help:
 	@echo ... triangle-vulkan
 	@echo ... wave
 	@echo ... windows
+	@echo ... Actor.obj
+	@echo ... Actor.i
+	@echo ... Actor.s
+	@echo ... Camera.obj
+	@echo ... Camera.i
+	@echo ... Camera.s
 	@echo ... Game.obj
 	@echo ... Game.i
 	@echo ... Game.s
+	@echo ... Mesh.obj
+	@echo ... Mesh.i
+	@echo ... Mesh.s
+	@echo ... Planet.obj
+	@echo ... Planet.i
+	@echo ... Planet.s
 	@echo ... ShaderProgram.obj
 	@echo ... ShaderProgram.i
 	@echo ... ShaderProgram.s
+	@echo ... Texture.obj
+	@echo ... Texture.i
+	@echo ... Texture.s
 	@echo ... Window.obj
 	@echo ... Window.i
 	@echo ... Window.s
@@ -769,6 +952,12 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... objload.obj
+	@echo ... objload.i
+	@echo ... objload.s
+	@echo ... stb_image.obj
+	@echo ... stb_image.i
+	@echo ... stb_image.s
 .PHONY : help
 
 

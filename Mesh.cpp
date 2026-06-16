@@ -1,10 +1,9 @@
 #include "Mesh.h"
 #include <glad/glad.h>
-#include <glfw3.h>
-#include <vector>
+#include <GLFW/glfw3.h>
 #include <vector>
 #include "objload.h"
-#include "glm.hpp"
+#include <glm/glm.hpp>
 
 Mesh::Mesh(std::string meshPath){
 	std::vector<glm::vec3> vertexPositions;
@@ -42,6 +41,7 @@ Mesh::~Mesh() noexcept{
 	glDeleteBuffers(1, &VBOTexture);
 	glDeleteBuffers(1, &VBONormals);
 }
+
 
 unsigned int Mesh::GetVAO() const{
 	return VAO;

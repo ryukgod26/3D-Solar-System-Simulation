@@ -3,6 +3,12 @@
 #include "Settings.h"
 #include <limits>
 
+namespace settings {
+	std::string texturePath = "ResFiles/Textures/";
+	std::string meshesPath = "ResFiles/Meshes/";
+	std::string shadersPath = "ResFiles/Shaders/";
+}
+
 int main(){
 
 	try{

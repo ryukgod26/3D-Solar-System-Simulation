@@ -1,6 +1,6 @@
-CMakeFiles/SolarSystem.dir/Game.cpp.obj: \
- D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Game.cpp \
- D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Game.h \
+CMakeFiles/SolarSystem.dir/Mesh.cpp.obj: \
+ D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Mesh.cpp \
+ D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Mesh.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\string \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++config.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\os_defines.h \
@@ -79,30 +79,38 @@ CMakeFiles/SolarSystem.dir/Game.cpp.obj: \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\functional_hash.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\hash_bytes.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_string.tcc \
- D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Window.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\memory \
+ D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/include/glad/glad.h \
+ D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/include/KHR/khrplatform.h \
+ D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/build/_deps/glfw-src/include/GLFW/glfw3.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\vector \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_construct.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_uninitialized.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_tempbuf.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_raw_storage_iter.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\typeinfo \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\concurrence.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\uses_allocator.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\functional \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\tuple \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\utility \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_relops.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\array \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_vector.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_bvector.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\vector.tcc \
+ D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\objload.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ios \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ios_base.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_classes.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_classes.tcc \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\system_error \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\error_constants.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\stdexcept \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\unique_ptr.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\shared_ptr.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\shared_ptr_base.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\allocated_ptr.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\aligned_buffer.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\shared_ptr_atomic.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\atomic_base.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\backward\auto_ptr.h \
- D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Actor.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\streambuf \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\streambuf.tcc \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_ios.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_facets.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cwctype \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\ctype_base.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\streambuf_iterator.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\ctype_inline.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_facets.tcc \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_ios.tcc \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ostream.tcc \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\istream.tcc \
  D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/include/glm/glm.hpp \
  D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/include/glm/detail/_fixes.hpp \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cmath c:\mingw\include\math.h \
@@ -250,16 +258,4 @@ CMakeFiles/SolarSystem.dir/Game.cpp.obj: \
  D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/include/glm/detail/type_half.hpp \
  D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/include/glm/detail/type_half.inl \
  D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/include/glm/integer.hpp \
- D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/include/glm/detail/func_integer.inl \
- D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\ShaderProgram.h \
- D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/include/glad/glad.h \
- D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/include/KHR/khrplatform.h \
- D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Mesh.h \
- D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Texture.h \
- D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Camera.h \
- D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Planet.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\vector \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_vector.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_bvector.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\vector.tcc \
- D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Settings.h
+ D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/include/glm/detail/func_integer.inl

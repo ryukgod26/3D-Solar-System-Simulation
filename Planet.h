@@ -12,4 +12,4 @@ class Planet : public Actor{
 		const float rotationSpeedDegrees;
 		float currentOrbitDegrees = 0.0f;
 		float currentRotationDegrees = 0.0f;
-}
+};

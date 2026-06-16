@@ -131,11 +131,116 @@ CMakeFiles/SolarSystem.dir/ShaderProgram.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SolarSystem.dir/ShaderProgram.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\ShaderProgram.cpp -o CMakeFiles\SolarSystem.dir\ShaderProgram.cpp.s
 
+CMakeFiles/SolarSystem.dir/Camera.cpp.obj: CMakeFiles/SolarSystem.dir/flags.make
+CMakeFiles/SolarSystem.dir/Camera.cpp.obj: CMakeFiles/SolarSystem.dir/includes_CXX.rsp
+CMakeFiles/SolarSystem.dir/Camera.cpp.obj: D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/Camera.cpp
+CMakeFiles/SolarSystem.dir/Camera.cpp.obj: CMakeFiles/SolarSystem.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SolarSystem.dir/Camera.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SolarSystem.dir/Camera.cpp.obj -MF CMakeFiles\SolarSystem.dir\Camera.cpp.obj.d -o CMakeFiles\SolarSystem.dir\Camera.cpp.obj -c D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Camera.cpp
+
+CMakeFiles/SolarSystem.dir/Camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SolarSystem.dir/Camera.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Camera.cpp > CMakeFiles\SolarSystem.dir\Camera.cpp.i
+
+CMakeFiles/SolarSystem.dir/Camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SolarSystem.dir/Camera.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Camera.cpp -o CMakeFiles\SolarSystem.dir\Camera.cpp.s
+
+CMakeFiles/SolarSystem.dir/Mesh.cpp.obj: CMakeFiles/SolarSystem.dir/flags.make
+CMakeFiles/SolarSystem.dir/Mesh.cpp.obj: CMakeFiles/SolarSystem.dir/includes_CXX.rsp
+CMakeFiles/SolarSystem.dir/Mesh.cpp.obj: D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/Mesh.cpp
+CMakeFiles/SolarSystem.dir/Mesh.cpp.obj: CMakeFiles/SolarSystem.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SolarSystem.dir/Mesh.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SolarSystem.dir/Mesh.cpp.obj -MF CMakeFiles\SolarSystem.dir\Mesh.cpp.obj.d -o CMakeFiles\SolarSystem.dir\Mesh.cpp.obj -c D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Mesh.cpp
+
+CMakeFiles/SolarSystem.dir/Mesh.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SolarSystem.dir/Mesh.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Mesh.cpp > CMakeFiles\SolarSystem.dir\Mesh.cpp.i
+
+CMakeFiles/SolarSystem.dir/Mesh.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SolarSystem.dir/Mesh.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Mesh.cpp -o CMakeFiles\SolarSystem.dir\Mesh.cpp.s
+
+CMakeFiles/SolarSystem.dir/Texture.cpp.obj: CMakeFiles/SolarSystem.dir/flags.make
+CMakeFiles/SolarSystem.dir/Texture.cpp.obj: CMakeFiles/SolarSystem.dir/includes_CXX.rsp
+CMakeFiles/SolarSystem.dir/Texture.cpp.obj: D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/Texture.cpp
+CMakeFiles/SolarSystem.dir/Texture.cpp.obj: CMakeFiles/SolarSystem.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SolarSystem.dir/Texture.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SolarSystem.dir/Texture.cpp.obj -MF CMakeFiles\SolarSystem.dir\Texture.cpp.obj.d -o CMakeFiles\SolarSystem.dir\Texture.cpp.obj -c D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Texture.cpp
+
+CMakeFiles/SolarSystem.dir/Texture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SolarSystem.dir/Texture.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Texture.cpp > CMakeFiles\SolarSystem.dir\Texture.cpp.i
+
+CMakeFiles/SolarSystem.dir/Texture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SolarSystem.dir/Texture.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Texture.cpp -o CMakeFiles\SolarSystem.dir\Texture.cpp.s
+
+CMakeFiles/SolarSystem.dir/Planet.cpp.obj: CMakeFiles/SolarSystem.dir/flags.make
+CMakeFiles/SolarSystem.dir/Planet.cpp.obj: CMakeFiles/SolarSystem.dir/includes_CXX.rsp
+CMakeFiles/SolarSystem.dir/Planet.cpp.obj: D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/Planet.cpp
+CMakeFiles/SolarSystem.dir/Planet.cpp.obj: CMakeFiles/SolarSystem.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SolarSystem.dir/Planet.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SolarSystem.dir/Planet.cpp.obj -MF CMakeFiles\SolarSystem.dir\Planet.cpp.obj.d -o CMakeFiles\SolarSystem.dir\Planet.cpp.obj -c D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Planet.cpp
+
+CMakeFiles/SolarSystem.dir/Planet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SolarSystem.dir/Planet.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Planet.cpp > CMakeFiles\SolarSystem.dir\Planet.cpp.i
+
+CMakeFiles/SolarSystem.dir/Planet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SolarSystem.dir/Planet.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Planet.cpp -o CMakeFiles\SolarSystem.dir\Planet.cpp.s
+
+CMakeFiles/SolarSystem.dir/Actor.cpp.obj: CMakeFiles/SolarSystem.dir/flags.make
+CMakeFiles/SolarSystem.dir/Actor.cpp.obj: CMakeFiles/SolarSystem.dir/includes_CXX.rsp
+CMakeFiles/SolarSystem.dir/Actor.cpp.obj: D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/Actor.cpp
+CMakeFiles/SolarSystem.dir/Actor.cpp.obj: CMakeFiles/SolarSystem.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SolarSystem.dir/Actor.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SolarSystem.dir/Actor.cpp.obj -MF CMakeFiles\SolarSystem.dir\Actor.cpp.obj.d -o CMakeFiles\SolarSystem.dir\Actor.cpp.obj -c D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Actor.cpp
+
+CMakeFiles/SolarSystem.dir/Actor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SolarSystem.dir/Actor.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Actor.cpp > CMakeFiles\SolarSystem.dir\Actor.cpp.i
+
+CMakeFiles/SolarSystem.dir/Actor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SolarSystem.dir/Actor.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\Actor.cpp -o CMakeFiles\SolarSystem.dir\Actor.cpp.s
+
+CMakeFiles/SolarSystem.dir/objload.cpp.obj: CMakeFiles/SolarSystem.dir/flags.make
+CMakeFiles/SolarSystem.dir/objload.cpp.obj: CMakeFiles/SolarSystem.dir/includes_CXX.rsp
+CMakeFiles/SolarSystem.dir/objload.cpp.obj: D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/objload.cpp
+CMakeFiles/SolarSystem.dir/objload.cpp.obj: CMakeFiles/SolarSystem.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SolarSystem.dir/objload.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SolarSystem.dir/objload.cpp.obj -MF CMakeFiles\SolarSystem.dir\objload.cpp.obj.d -o CMakeFiles\SolarSystem.dir\objload.cpp.obj -c D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\objload.cpp
+
+CMakeFiles/SolarSystem.dir/objload.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SolarSystem.dir/objload.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\objload.cpp > CMakeFiles\SolarSystem.dir\objload.cpp.i
+
+CMakeFiles/SolarSystem.dir/objload.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SolarSystem.dir/objload.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\objload.cpp -o CMakeFiles\SolarSystem.dir\objload.cpp.s
+
+CMakeFiles/SolarSystem.dir/stb_image.cpp.obj: CMakeFiles/SolarSystem.dir/flags.make
+CMakeFiles/SolarSystem.dir/stb_image.cpp.obj: CMakeFiles/SolarSystem.dir/includes_CXX.rsp
+CMakeFiles/SolarSystem.dir/stb_image.cpp.obj: D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/stb_image.cpp
+CMakeFiles/SolarSystem.dir/stb_image.cpp.obj: CMakeFiles/SolarSystem.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/SolarSystem.dir/stb_image.cpp.obj"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SolarSystem.dir/stb_image.cpp.obj -MF CMakeFiles\SolarSystem.dir\stb_image.cpp.obj.d -o CMakeFiles\SolarSystem.dir\stb_image.cpp.obj -c D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\stb_image.cpp
+
+CMakeFiles/SolarSystem.dir/stb_image.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SolarSystem.dir/stb_image.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\stb_image.cpp > CMakeFiles\SolarSystem.dir\stb_image.cpp.i
+
+CMakeFiles/SolarSystem.dir/stb_image.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SolarSystem.dir/stb_image.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\stb_image.cpp -o CMakeFiles\SolarSystem.dir\stb_image.cpp.s
+
 CMakeFiles/SolarSystem.dir/glad.c.obj: CMakeFiles/SolarSystem.dir/flags.make
 CMakeFiles/SolarSystem.dir/glad.c.obj: CMakeFiles/SolarSystem.dir/includes_C.rsp
 CMakeFiles/SolarSystem.dir/glad.c.obj: D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/glad.c
 CMakeFiles/SolarSystem.dir/glad.c.obj: CMakeFiles/SolarSystem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/SolarSystem.dir/glad.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/SolarSystem.dir/glad.c.obj"
 	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SolarSystem.dir/glad.c.obj -MF CMakeFiles\SolarSystem.dir\glad.c.obj.d -o CMakeFiles\SolarSystem.dir\glad.c.obj -c D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\glad.c
 
 CMakeFiles/SolarSystem.dir/glad.c.i: cmake_force
@@ -152,6 +257,13 @@ SolarSystem_OBJECTS = \
 "CMakeFiles/SolarSystem.dir/Game.cpp.obj" \
 "CMakeFiles/SolarSystem.dir/Window.cpp.obj" \
 "CMakeFiles/SolarSystem.dir/ShaderProgram.cpp.obj" \
+"CMakeFiles/SolarSystem.dir/Camera.cpp.obj" \
+"CMakeFiles/SolarSystem.dir/Mesh.cpp.obj" \
+"CMakeFiles/SolarSystem.dir/Texture.cpp.obj" \
+"CMakeFiles/SolarSystem.dir/Planet.cpp.obj" \
+"CMakeFiles/SolarSystem.dir/Actor.cpp.obj" \
+"CMakeFiles/SolarSystem.dir/objload.cpp.obj" \
+"CMakeFiles/SolarSystem.dir/stb_image.cpp.obj" \
 "CMakeFiles/SolarSystem.dir/glad.c.obj"
 
 # External object files for target SolarSystem
@@ -161,13 +273,20 @@ SolarSystem.exe: CMakeFiles/SolarSystem.dir/main.cpp.obj
 SolarSystem.exe: CMakeFiles/SolarSystem.dir/Game.cpp.obj
 SolarSystem.exe: CMakeFiles/SolarSystem.dir/Window.cpp.obj
 SolarSystem.exe: CMakeFiles/SolarSystem.dir/ShaderProgram.cpp.obj
+SolarSystem.exe: CMakeFiles/SolarSystem.dir/Camera.cpp.obj
+SolarSystem.exe: CMakeFiles/SolarSystem.dir/Mesh.cpp.obj
+SolarSystem.exe: CMakeFiles/SolarSystem.dir/Texture.cpp.obj
+SolarSystem.exe: CMakeFiles/SolarSystem.dir/Planet.cpp.obj
+SolarSystem.exe: CMakeFiles/SolarSystem.dir/Actor.cpp.obj
+SolarSystem.exe: CMakeFiles/SolarSystem.dir/objload.cpp.obj
+SolarSystem.exe: CMakeFiles/SolarSystem.dir/stb_image.cpp.obj
 SolarSystem.exe: CMakeFiles/SolarSystem.dir/glad.c.obj
 SolarSystem.exe: CMakeFiles/SolarSystem.dir/build.make
 SolarSystem.exe: _deps/glfw-build/src/libglfw3.a
 SolarSystem.exe: CMakeFiles/SolarSystem.dir/linkLibs.rsp
 SolarSystem.exe: CMakeFiles/SolarSystem.dir/objects1.rsp
 SolarSystem.exe: CMakeFiles/SolarSystem.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable SolarSystem.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable SolarSystem.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\SolarSystem.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
