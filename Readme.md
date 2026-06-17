@@ -70,4 +70,4 @@ g++ main.cpp Game.cpp Window.cpp ShaderProgram.cpp objload.cpp glad.c -o my_engi
 
 ## Current Status
 
-Basic OpenGL window with dark blue background. Ready for solar system implementation.
+All the Planets are Added and Solar System Simulation is working fine. You can Move around with the WASD Keys. yet to add Zoom In and Zoom Out features with Arrow Keys.
