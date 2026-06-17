@@ -1,56 +1,13 @@
 #include "Game.h"
 #include "Settings.h"
-#include <fstream>
-#include <iostream>
-
 #ifndef PROJECT_ROOT_DIR
 #define PROJECT_ROOT_DIR "."
 #endif
 
-namespace {
-
-bool FileExists(const std::string& path) {
-	std::ifstream stream(path.c_str());
-	return stream.good();
-}
-
-std::string ResolveProjectRoot() {
-	const std::string cmakeRoot = std::string(PROJECT_ROOT_DIR);
-	const std::string candidates[] = {
-		cmakeRoot,
-		".",
-		".."
-	};
-
-	std::cerr << "[DEBUG] CMAKE PROJECT_ROOT_DIR = " << cmakeRoot << std::endl;
-	std::cerr << "[DEBUG] Testing candidate roots..." << std::endl;
-
-	for (int i = 0; i < 3; i++) {
-		const std::string& candidate = candidates[i];
-		std::string testPath = candidate + "/ResFiles/Shaders/VertexShader.vert";
-		bool exists = FileExists(testPath);
-		std::cerr << "[DEBUG]   [" << i << "] Testing: " << testPath << " -> " << (exists ? "FOUND" : "NOT FOUND") << std::endl;
-		if (exists) {
-			std::cerr << "[Asset Root] Using project root: " << candidate << std::endl;
-			return candidate;
-		}
-	}
-
-	std::cerr << "[Asset Root] Failed to find shaders, falling back to CMAKE root: " << cmakeRoot << std::endl;
-	return cmakeRoot;
-}
-
-const std::string& ProjectRoot() {
-	static const std::string root = ResolveProjectRoot();
-	return root;
-}
-
-}
-
 Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int viewportWidth, int viewportHeight,  const std::string title, GLFWmonitor *monitor,GLFWwindow* share) : 
-	window(windowWidth,windowHeight,viewportX,viewportY,viewportWidth,viewportHeight,title,monitor,share),shaderProgram(ProjectRoot() + settings::shadersPath +"VertexShader.vert",ProjectRoot() + settings::shadersPath + "FragmentShader.frag"), 
+	window(windowWidth,windowHeight,viewportX,viewportY,viewportWidth,viewportHeight,title,monitor,share),shaderProgram(std::string(PROJECT_ROOT_DIR) + settings::shadersPath +"VertexShader.vert",std::string(PROJECT_ROOT_DIR) + settings::shadersPath + "FragmentShader.frag"), 
 	camera(settings::cameraInitialPosition, settings::cameraSpeed, settings::cameraYaw, settings::cameraPitch, settings::cameraMaxPitch, settings::cameraSensitivity, settings::cameraFOV, settings::screenRatio, settings::cameraNearPlaneDistance, settings::cameraFarPlaneDistance),
-	sphereMesh(ProjectRoot() + settings::meshesPath+  "sphere.obj"),
+	sphereMesh(std::string(PROJECT_ROOT_DIR) + settings::meshesPath+  "sphere.obj"),
 /*	sunTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath + "sun.jpeg"),
        	planetTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath +"earth.jpeg"), 
 	mercuryTexture(std::string(PROJECT_ROOT_DIR) + settings::texturesPath +"mercury.jpg"),
@@ -63,7 +20,7 @@ Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int vie
 //	earth(settings::earthOrbitRadius, settings::earthScale, 90, 180),
 	//sun("monkey.obj", sunTexture), earth("cube.obj", planetTexture), skyBox("sphere.obj", skyboxTexture),
 	
-	skyboxTexture(ProjectRoot() + settings::texturePath +"stars.jpeg")
+	skyboxTexture(std::string(PROJECT_ROOT_DIR) + settings::texturePath +"stars.jpeg")
 {
 	lastMousePosition = window.GetMousePosition();
 	lastTime = window.GetElapsedTime();
@@ -80,16 +37,15 @@ Game::Game(int windowWidth,int windowHeight,int viewportX, int viewportY,int vie
 	planets.emplace_back(settings::uranusOrbitRadius, settings::uranusScale, settings::uranusOrbitSpeed, -settings::uranusRotationSpeed);
 	planets.emplace_back(settings::neptuneOrbitRadius, settings::neptuneScale, settings::neptuneOrbitSpeed, settings::neptuneRotationSpeed);
 
-	std::cerr << "[Game Init] Asset root resolved to: " << ProjectRoot() << std::endl;
-	planetTextures.emplace_back(ProjectRoot() + settings::texturePath + "sun.jpg");
-	planetTextures.emplace_back(ProjectRoot() + settings::texturePath + "venus.jpg");
-	planetTextures.emplace_back(ProjectRoot() + settings::texturePath + "mercury.jpg");
-	planetTextures.emplace_back(ProjectRoot() + settings::texturePath + "earth.jpeg");
-	planetTextures.emplace_back(ProjectRoot() + settings::texturePath + "mars.jpg");
-	planetTextures.emplace_back(ProjectRoot() + settings::texturePath + "jupiter.jpg");
-	planetTextures.emplace_back(ProjectRoot() + settings::texturePath + "saturn.jpg");
-	planetTextures.emplace_back(ProjectRoot() + settings::texturePath + "uranus.jpg");
-	planetTextures.emplace_back(ProjectRoot() + settings::texturePath + "neptune.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR)+ settings::texturePath + "sun.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturePath + "venus.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturePath + "mercury.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturePath + "earth.jpeg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturePath + "mars.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturePath + "jupiter.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturePath + "saturn.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturePath + "uranus.jpg");
+	planetTextures.emplace_back(std::string(PROJECT_ROOT_DIR) + settings::texturePath + "neptune.jpg");
 	/*
 	std::string objPath = std::string(PROJECT_ROOT_DIR) + "/monkey.obj";
 	if (!loadOBJ(objPath.c_str(),vertexPositions,textureCoordinates,normals)){
@@ -146,7 +102,7 @@ void Game::Update(float deltaTime)
 	// unsigned int matrixID = glGetUniformLocation(shaderProgram.GetID(),"Model");
 	// glUniformMatrix4fv(matrixID,1,GL_FALSE,&Model[0][0]);
 
-	if(window.IsKeyPressed(settings::exitKey)){
+	if (window.GetElapsedTime() > 1.0f && window.IsKeyPressed(settings::exitKey)) {
 		window.Close();
 	}
 
@@ -225,11 +181,12 @@ void Game::Draw(float deltaTime)
 	glm::mat4 viewMatrix = camera.GetViewMatrix();
 
 	window.UseShader(shaderProgram);
-	unsigned int matrixID = shaderProgram.GetUniformID("MVP");
+	int matrixID = shaderProgram.GetUniformID("MVP");
 
 
 	for(int i =0; i < planets.size(); i++){
-		shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * planets[i].GetModelMatrix());
+		const glm::mat4& modelMatrix = planets[i].GetModelMatrix();
+		shaderProgram.SendUniform<glm::mat4>(matrixID, projection * viewMatrix * modelMatrix);
 		window.DrawActor(sphereMesh, planetTextures[i]);
 	}
 

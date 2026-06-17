@@ -26,11 +26,13 @@ Mesh::Mesh(std::string meshPath){
 	glGenBuffers(1, &VBOTexture);
 	glBindBuffer(GL_ARRAY_BUFFER, VBOTexture);
 	glBufferData(GL_ARRAY_BUFFER, textureCoordinates.size() * sizeof(glm::vec2), textureCoordinates.data(), GL_STATIC_DRAW);
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(GLfloat), 0);
 	glEnableVertexAttribArray(1);
 
 	glGenBuffers(1, &VBONormals);
 	glBindBuffer(GL_ARRAY_BUFFER, VBONormals);
 	glBufferData(GL_ARRAY_BUFFER, normals.size() * sizeof(glm::vec3), normals.data(), GL_STATIC_DRAW);
+	glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), 0);
 	glEnableVertexAttribArray(2);
 }
 
