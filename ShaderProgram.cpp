@@ -74,6 +74,8 @@ ShaderProgram::ShaderProgram(std::string vertexShaderPath, std::string fragmentS
 		glGetProgramInfoLog(shaderProgramID,512,NULL,infoLog);
 		throw std::runtime_error(std::string("Shader program linking failed: ") + infoLog);
 	}
+	glUseProgram(shaderProgramID);
+	glUniform1i(glGetUniformLocation(shaderProgramID, "textureSampler"), 0);
 	glDeleteShader(vertex);
 	glDeleteShader(fragment);
 }
@@ -92,7 +94,10 @@ unsigned int ShaderProgram::GetID() const{
 	return shaderProgramID;
 }
 
-unsigned int ShaderProgram::GetUniformID(const char* uniformName) const {
-	assert(glGetUniformLocation(shaderProgramID, uniformName) != -1);
-	return glGetUniformLocation(shaderProgramID, uniformName);
+int ShaderProgram::GetUniformID(const char* uniformName) const {
+	int uniformID = glGetUniformLocation(shaderProgramID, uniformName);
+	if (uniformID == -1) {
+		std::cerr << "[ShaderProgram] Missing uniform: " << uniformName << std::endl;
+	}
+	return uniformID;
 }
