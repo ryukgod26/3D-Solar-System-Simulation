@@ -14,11 +14,29 @@ Texture::Texture(std::string texturePath){
 
 	unsigned char* data = stbi_load(texturePath.c_str(), &width, &height, &channelsCount, 0);
 	if (data){
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+		GLenum format = GL_RGB;
+		if (channelsCount == 1) {
+			format = GL_RED;
+		} else if (channelsCount == 4) {
+			format = GL_RGBA;
+		}
+
+		glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
 		glGenerateMipmap(GL_TEXTURE_2D);
 	} else{
-		std::cout<< "Failed to load Texture"<< texturePath << std::endl;
-		exit(EXIT_FAILURE);
+		std::cout << "Failed to load Texture: " << texturePath;
+		const char* reason = stbi_failure_reason();
+		if (reason) {
+			std::cout << " (" << reason << ")";
+		}
+		std::cout << std::endl;
+
+		width = 1;
+		height = 1;
+		channelsCount = 3;
+		const unsigned char fallbackPixel[] = {255, 0, 255};
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, fallbackPixel);
+		glGenerateMipmap(GL_TEXTURE_2D);
 	}
 
 	stbi_image_free(data);

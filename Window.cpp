@@ -4,9 +4,16 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 
+namespace {
+void GLFWErrorCallback(int error, const char* description) {
+	std::cerr << "[GLFW] Error " << error << ": " << description << std::endl;
+}
+}
+
 Window::Window(int windowWidth, int windowHeight, int viewportX,int viewportY, int viewportWidth, int viewportHeight, const std::string title, GLFWmonitor* monitor, GLFWwindow* share)
 :
 window(nullptr,[](GLFWwindow* window){glfwDestroyWindow(window);}){
+	glfwSetErrorCallback(GLFWErrorCallback);
 
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR,3);
@@ -19,14 +26,14 @@ window(nullptr,[](GLFWwindow* window){glfwDestroyWindow(window);}){
 	
 	window.reset(glfwCreateWindow(windowWidth,windowHeight,title.c_str(),monitor,share));
 	if (window == nullptr){
-		std::cout<<"Failed to Intialize GLFW.\n";
+		std::cerr<<"[Window] Failed to initialize GLFW window" << std::endl;
 		glfwTerminate();
 		exit(EXIT_FAILURE);
 	}
 	glfwMakeContextCurrent(window.get());
 
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
-		std::cout<<"Failed to Intialize GLAD\n";
+		std::cerr<<"[Window] Failed to initialize GLAD" << std::endl;
 		exit(EXIT_FAILURE);
 	}
 
