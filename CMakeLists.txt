@@ -3,6 +3,7 @@ project(SolarSystemSimulation LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 find_package(OpenGL REQUIRED)
 
@@ -37,6 +38,14 @@ add_executable(
 target_include_directories(SolarSystem PRIVATE ${CMAKE_SOURCE_DIR}/include)
 
 target_compile_definitions(SolarSystem PRIVATE PROJECT_ROOT_DIR="${CMAKE_SOURCE_DIR}")
+
+add_custom_command(
+    TARGET SolarSystem POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+            ${CMAKE_SOURCE_DIR}/ResFiles
+            $<TARGET_FILE_DIR:SolarSystem>/ResFiles
+    COMMENT "Copying runtime assets to the executable directory"
+)
 
 target_link_libraries(
     SolarSystem

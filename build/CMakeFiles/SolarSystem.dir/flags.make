@@ -13,5 +13,5 @@ CXX_DEFINES = -DPROJECT_ROOT_DIR=\"D:/3D_Solar_System_Simulation/3D-Solar-System
 
 CXX_INCLUDES = @CMakeFiles/SolarSystem.dir/includes_CXX.rsp
 
-CXX_FLAGS = -g -std=gnu++11
+CXX_FLAGS = -g -std=c++11
 

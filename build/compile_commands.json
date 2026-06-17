@@ -1,67 +1,67 @@
 [
 {
   "directory": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/build",
-  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\SolarSystem.dir\\main.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\main.cpp",
+  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\SolarSystem.dir\\main.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\main.cpp",
   "file": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/main.cpp",
   "output": "CMakeFiles/SolarSystem.dir/main.cpp.obj"
 },
 {
   "directory": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/build",
-  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\SolarSystem.dir\\Game.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\Game.cpp",
+  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\SolarSystem.dir\\Game.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\Game.cpp",
   "file": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/Game.cpp",
   "output": "CMakeFiles/SolarSystem.dir/Game.cpp.obj"
 },
 {
   "directory": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/build",
-  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\SolarSystem.dir\\Window.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\Window.cpp",
+  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\SolarSystem.dir\\Window.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\Window.cpp",
   "file": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/Window.cpp",
   "output": "CMakeFiles/SolarSystem.dir/Window.cpp.obj"
 },
 {
   "directory": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/build",
-  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\SolarSystem.dir\\ShaderProgram.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\ShaderProgram.cpp",
+  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\SolarSystem.dir\\ShaderProgram.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\ShaderProgram.cpp",
   "file": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/ShaderProgram.cpp",
   "output": "CMakeFiles/SolarSystem.dir/ShaderProgram.cpp.obj"
 },
 {
   "directory": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/build",
-  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\SolarSystem.dir\\Camera.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\Camera.cpp",
+  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\SolarSystem.dir\\Camera.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\Camera.cpp",
   "file": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/Camera.cpp",
   "output": "CMakeFiles/SolarSystem.dir/Camera.cpp.obj"
 },
 {
   "directory": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/build",
-  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\SolarSystem.dir\\Mesh.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\Mesh.cpp",
+  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\SolarSystem.dir\\Mesh.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\Mesh.cpp",
   "file": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/Mesh.cpp",
   "output": "CMakeFiles/SolarSystem.dir/Mesh.cpp.obj"
 },
 {
   "directory": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/build",
-  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\SolarSystem.dir\\Texture.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\Texture.cpp",
+  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\SolarSystem.dir\\Texture.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\Texture.cpp",
   "file": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/Texture.cpp",
   "output": "CMakeFiles/SolarSystem.dir/Texture.cpp.obj"
 },
 {
   "directory": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/build",
-  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\SolarSystem.dir\\Planet.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\Planet.cpp",
+  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\SolarSystem.dir\\Planet.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\Planet.cpp",
   "file": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/Planet.cpp",
   "output": "CMakeFiles/SolarSystem.dir/Planet.cpp.obj"
 },
 {
   "directory": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/build",
-  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\SolarSystem.dir\\Actor.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\Actor.cpp",
+  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\SolarSystem.dir\\Actor.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\Actor.cpp",
   "file": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/Actor.cpp",
   "output": "CMakeFiles/SolarSystem.dir/Actor.cpp.obj"
 },
 {
   "directory": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/build",
-  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\SolarSystem.dir\\objload.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\objload.cpp",
+  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\SolarSystem.dir\\objload.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\objload.cpp",
   "file": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/objload.cpp",
   "output": "CMakeFiles/SolarSystem.dir/objload.cpp.obj"
 },
 {
   "directory": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/build",
-  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\SolarSystem.dir\\stb_image.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\stb_image.cpp",
+  "command": "C:\\MinGW\\bin\\g++.exe -DPROJECT_ROOT_DIR=\\\"D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation\\\" @CMakeFiles/SolarSystem.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\SolarSystem.dir\\stb_image.cpp.obj -c D:\\3D_Solar_System_Simulation\\3D-Solar-System-Simulation\\stb_image.cpp",
   "file": "D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/stb_image.cpp",
   "output": "CMakeFiles/SolarSystem.dir/stb_image.cpp.obj"
 },

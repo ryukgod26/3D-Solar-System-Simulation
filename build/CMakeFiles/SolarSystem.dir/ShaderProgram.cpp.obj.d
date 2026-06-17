@@ -1,9 +1,6 @@
 CMakeFiles/SolarSystem.dir/ShaderProgram.cpp.obj: \
  D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\ShaderProgram.cpp \
  D:\3D_Solar_System_Simulation\3D-Solar-System-Simulation\ShaderProgram.h \
- c:\mingw\include\assert.h c:\mingw\include\_mingw.h \
- c:\mingw\include\msvcrtver.h c:\mingw\include\w32api.h \
- c:\mingw\include\sdkddkver.h \
  D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/include/glm/glm.hpp \
  D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/include/glm/detail/_fixes.hpp \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cmath \
@@ -12,9 +9,12 @@ CMakeFiles/SolarSystem.dir/ShaderProgram.cpp.obj: \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\cpu_defines.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\cpp_type_traits.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\type_traits.h \
- c:\mingw\include\math.h \
+ c:\mingw\include\math.h c:\mingw\include\_mingw.h \
+ c:\mingw\include\msvcrtver.h c:\mingw\include\w32api.h \
+ c:\mingw\include\sdkddkver.h \
  D:/3D_Solar_System_Simulation/3D-Solar-System-Simulation/include/glm/detail/setup.hpp \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cassert \
+ c:\mingw\include\assert.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstddef \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\stddef.h \
  d:\3d_solar_system_simulation\3d-solar-system-simulation\include\glm\simd\platform.h \
@@ -184,14 +184,10 @@ CMakeFiles/SolarSystem.dir/ShaderProgram.cpp.obj: \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\predefined_ops.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\postypes.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cwchar \
- c:\mingw\include\wchar.h c:\mingw\include\wctype.h \
- c:\mingw\include\sys\types.h c:\mingw\include\stdio.h \
- c:\mingw\include\sys/types.h \
+ c:\mingw\include\wchar.h c:\mingw\include\stdio.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\stdarg.h \
- c:\mingw\include\stdlib.h c:\mingw\include\direct.h \
- c:\mingw\include\sys/stat.h c:\mingw\include\io.h \
- c:\mingw\include\stdint.h c:\mingw\include\time.h \
- c:\mingw\include\locale.h c:\mingw\include\process.h \
+ c:\mingw\include\stdlib.h c:\mingw\include\time.h \
+ c:\mingw\include\sys\types.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\allocator.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++allocator.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\new_allocator.h \
@@ -244,6 +240,7 @@ CMakeFiles/SolarSystem.dir/ShaderProgram.cpp.obj: \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_ios.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_facets.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cwctype \
+ c:\mingw\include\wctype.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\ctype_base.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\streambuf_iterator.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\ctype_inline.h \
